@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Link Restaurants | NFC Digital Restaurant Menus</title>
+<meta name="description" content="Search participating restaurant menus or get a simple NFC-ready digital menu page for your restaurant. No app, no PDF — a fast, mobile-friendly menu your customers open with one tap.">
+<link rel="canonical" href="https://www.linkrestaurants.com/">
+
+<!-- favicon -->
+<link rel="icon" type="image/png" href="/images/find-restaurants-favicon.png">
+<link rel="apple-touch-icon" href="/images/find-restaurants-favicon.png">
+
+<!-- social -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Link Restaurants | NFC Digital Restaurant Menus">
+<meta property="og:description" content="Search restaurant menus, or get your own NFC-ready digital menu page. Customers tap a card and your menu opens instantly — no app, no PDF.">
+<meta property="og:url" content="https://www.linkrestaurants.com/">
+<meta property="og:image" content="https://www.linkrestaurants.com/images/find-restaurants-hero.jpg">
+<meta property="og:site_name" content="Link Restaurants">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Link Restaurants | NFC Digital Restaurant Menus">
+<meta name="twitter:description" content="Search restaurant menus, or get your own NFC-ready digital menu page. One tap, no app.">
+<meta name="twitter:image" content="https://www.linkrestaurants.com/images/find-restaurants-hero.jpg">
+
+<!-- AI crawlers welcome -->
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="google" content="notranslate">
+
+<!-- fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   LinkRestaurants.com — global stylesheet
+   Design tokens: warm slate + signal orange on white
+   Display: Bricolage Grotesque | Body: Inter | Data: Space Mono
+   ============================================================ */
+
+:root{
+  --ink:#141619;          /* near-black text */
+  --ink-soft:#4a4f57;     /* secondary text */
+  --ink-faint:#7b818b;    /* captions */
+  --line:#e7e4de;         /* hairlines */
+  --paper:#ffffff;        /* page bg (matches logo) */
+  --paper-warm:#faf8f5;   /* section tint */
+  --orange:#f26722;       /* signal orange (from logo) */
+  --orange-deep:#d4530f;  /* pressed */
+  --orange-tint:#fff1e9;  /* wash */
+  --plum:#2b2440;         /* deep accent for contrast blocks */
+  --radius:16px;
+  --radius-sm:10px;
+  --shadow:0 1px 2px rgba(20,22,25,.04),0 8px 24px rgba(20,22,25,.06);
+  --shadow-lg:0 2px 4px rgba(20,22,25,.05),0 24px 48px rgba(20,22,25,.10);
+  --maxw:1180px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.6;
+  font-size:17px;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{
+  font-family:'Bricolage Grotesque','Inter',sans-serif;
+  line-height:1.08;
+  letter-spacing:-.02em;
+  font-weight:800;
+  color:var(--ink);
+}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+.mono{font-family:'Space Mono',ui-monospace,monospace}
+
+/* ---------- accessibility ---------- */
+:focus-visible{outline:3px solid var(--orange);outline-offset:2px;border-radius:4px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;padding:12px 18px;z-index:200;border-radius:0 0 8px 0}
+.skip:focus{left:0}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+}
+
+/* ---------- header ---------- */
+.site-header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(255,255,255,.88);
+  backdrop-filter:saturate(180%) blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;height:78px}
+.brand{display:flex;align-items:center}
+.brand img{width:280px;height:auto;max-height:56px;object-fit:contain}
+.nav{display:flex;align-items:center;gap:28px}
+.nav a{font-weight:600;font-size:15px;color:var(--ink-soft);transition:color .2s}
+.nav a:hover{color:var(--ink)}
+.nav .btn{color:#fff}
+.nav-toggle{display:none;background:none;border:0;cursor:pointer;padding:8px}
+.nav-toggle span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0;transition:.3s}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  background:var(--orange);color:#fff;
+  font-weight:700;font-size:15px;font-family:'Inter',sans-serif;
+  padding:13px 22px;border-radius:999px;border:0;cursor:pointer;
+  transition:transform .18s var(--ease),box-shadow .18s,background .18s;
+  box-shadow:0 6px 16px rgba(242,103,34,.28);
+  white-space:nowrap;
+}
+.btn:hover{background:var(--orange-deep);transform:translateY(-2px);box-shadow:0 10px 22px rgba(242,103,34,.34)}
+.btn:active{transform:translateY(0)}
+.btn-ghost{
+  background:transparent;color:var(--ink);
+  box-shadow:inset 0 0 0 1.5px var(--line);
+}
+.btn-ghost:hover{background:var(--paper-warm);box-shadow:inset 0 0 0 1.5px var(--ink);transform:translateY(-2px)}
+.btn-lg{padding:16px 30px;font-size:16px}
+.btn-block{width:100%}
+
+/* ---------- hero ---------- */
+.hero{position:relative;padding:72px 0 84px;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset:0;z-index:0;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.72),rgba(255,255,255,.86) 45%,rgba(255,255,255,.97)),
+    url('../images/find-restaurants-hero.jpg') center 35%/cover no-repeat;
+}
+.hero-inner{position:relative;z-index:1;max-width:820px;margin:0 auto;text-align:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'Space Mono',monospace;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--orange-deep);background:var(--orange-tint);
+  padding:7px 14px;border-radius:999px;margin-bottom:22px;
+  border:1px solid #fbdcc9;
+}
+.hero h1{font-size:clamp(38px,6.4vw,68px);margin-bottom:18px}
+.hero h1 .u{
+  background:linear-gradient(180deg,transparent 62%,rgba(242,103,34,.28) 62%);
+  padding:0 2px;
+}
+.hero .lede{font-size:clamp(17px,2.2vw,21px);color:var(--ink-soft);max-width:620px;margin:0 auto 34px}
+
+/* ---------- search ---------- */
+.searchbar{
+  position:relative;max-width:640px;margin:0 auto;
+  background:#fff;border-radius:999px;
+  box-shadow:var(--shadow-lg);
+  border:1px solid var(--line);
+  display:flex;align-items:center;padding:7px 7px 7px 22px;
+  transition:box-shadow .25s,border-color .25s;
+}
+.searchbar:focus-within{border-color:var(--orange);box-shadow:0 2px 4px rgba(242,103,34,.08),0 24px 48px rgba(242,103,34,.14)}
+.searchbar svg{flex:none;color:var(--ink-faint)}
+.searchbar input{
+  flex:1;border:0;outline:0;font-size:17px;font-family:inherit;color:var(--ink);
+  padding:14px 14px;background:transparent;min-width:0;
+}
+.searchbar input::placeholder{color:var(--ink-faint)}
+.search-meta{margin-top:14px;font-size:13.5px;color:var(--ink-faint);font-family:'Space Mono',monospace}
+.hero-trust{display:flex;gap:26px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+.hero-trust div{display:flex;align-items:center;gap:9px;font-size:14px;color:var(--ink-soft);font-weight:500}
+.hero-trust svg{color:var(--orange);flex:none}
+
+/* ---------- sections ---------- */
+section{padding:78px 0}
+.section-tint{background:var(--paper-warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.section-head{max-width:680px;margin:0 auto 46px;text-align:center}
+.section-head .tag{
+  font-family:'Space Mono',monospace;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--orange-deep);margin-bottom:14px;display:block;
+}
+.section-head h2{font-size:clamp(28px,4.4vw,44px);margin-bottom:14px}
+.section-head p{color:var(--ink-soft);font-size:18px}
+
+/* ---------- directory ---------- */
+#directory{padding-top:0;margin-top:-40px;position:relative;z-index:2}
+.dir-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:22px}
+.rcard{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px;display:flex;flex-direction:column;gap:12px;
+  box-shadow:var(--shadow);transition:transform .22s var(--ease),box-shadow .22s,border-color .22s;
+  animation:rise .5s var(--ease) both;
+}
+.rcard:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:#dcd7cf}
+.rcard-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.rcard h3{font-size:22px}
+.rcard .pin{display:flex;align-items:center;gap:6px;font-size:13.5px;color:var(--ink-faint);font-weight:500}
+.rcard .pin svg{color:var(--orange);flex:none}
+.rcard p{color:var(--ink-soft);font-size:15.5px;flex:1}
+.rcard .rcard-cta{margin-top:6px}
+.rcard-badge{
+  font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--orange-deep);background:var(--orange-tint);padding:4px 10px;border-radius:999px;flex:none;
+}
+.dir-empty{
+  grid-column:1/-1;text-align:center;padding:56px 24px;
+  background:#fff;border:1px dashed var(--line);border-radius:var(--radius);
+}
+.dir-empty h3{font-size:24px;margin-bottom:10px}
+.dir-empty p{color:var(--ink-soft);max-width:440px;margin:0 auto 22px}
+.dir-noresult{grid-column:1/-1;text-align:center;padding:40px;color:var(--ink-faint);font-family:'Space Mono',monospace}
+
+/* ---------- how it works ---------- */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;counter-reset:step}
+.step{position:relative;padding:28px;background:#fff;border:1px solid var(--line);border-radius:var(--radius)}
+.step .num{
+  font-family:'Space Mono',monospace;font-size:13px;color:var(--orange-deep);
+  font-weight:700;letter-spacing:.1em;margin-bottom:16px;display:block;
+}
+.step .ico{width:44px;height:44px;margin-bottom:16px;color:var(--orange)}
+.step h3{font-size:19px;margin-bottom:8px}
+.step p{color:var(--ink-soft);font-size:15px}
+
+/* ---------- feature split ---------- */
+.split-tag{
+  display:block;font-family:'Space Mono',monospace;font-size:12.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--orange-deep);margin-bottom:12px;
+}
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+.split.rev .split-media{order:-1}
+.split-media{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);position:relative}
+.split-media img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+.split-body h2{font-size:clamp(26px,3.6vw,38px);margin-bottom:16px}
+.split-body p{color:var(--ink-soft);margin-bottom:16px;font-size:17px}
+.checklist{list-style:none;display:flex;flex-direction:column;gap:12px;margin:22px 0}
+.checklist li{display:flex;gap:12px;align-items:flex-start;font-size:16px;color:var(--ink)}
+.checklist svg{flex:none;color:var(--orange);margin-top:3px}
+
+/* ---------- owner / pricing ---------- */
+#owner{background:var(--plum);color:#fff;border:0}
+#owner .section-head h2,#owner h3{color:#fff}
+#owner .section-head .tag{color:#ffb587}
+#owner .section-head p{color:#c9c4da}
+.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;max-width:900px;margin:0 auto}
+.price-card{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);
+  border-radius:var(--radius);padding:28px;text-align:center;
+  transition:transform .2s var(--ease),background .2s;
+}
+.price-card:hover{transform:translateY(-4px);background:rgba(255,255,255,.09)}
+.price-card.feature{background:var(--orange);border-color:var(--orange);box-shadow:0 20px 44px rgba(242,103,34,.34)}
+.price-card .plabel{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#ffb587;margin-bottom:12px}
+.price-card.feature .plabel{color:#fff6f0}
+.price-card .amt{font-family:'Bricolage Grotesque',sans-serif;font-size:44px;font-weight:800;line-height:1;color:#fff}
+.price-card .amt small{font-size:16px;font-weight:500;color:#c9c4da}
+.price-card.feature .amt small{color:#ffe9db}
+.price-card .pdesc{margin-top:12px;font-size:14.5px;color:#c9c4da}
+.price-card.feature .pdesc{color:#fff}
+.owner-note{text-align:center;max-width:620px;margin:34px auto 0;color:#c9c4da;font-size:15px}
+
+/* ---------- form ---------- */
+#signup{background:var(--paper-warm)}
+.form-card{
+  max-width:760px;margin:0 auto;background:#fff;border:1px solid var(--line);
+  border-radius:var(--radius);padding:clamp(24px,4vw,44px);box-shadow:var(--shadow-lg);
+}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field.full{grid-column:1/-1}
+.field label{font-size:14px;font-weight:600;color:var(--ink)}
+.field label .req{color:var(--orange-deep)}
+.field input,.field textarea,.field select{
+  font-family:inherit;font-size:16px;color:var(--ink);
+  padding:12px 14px;border:1.5px solid var(--line);border-radius:var(--radius-sm);
+  background:#fff;transition:border-color .18s,box-shadow .18s;width:100%;
+}
+.field input:focus,.field textarea:focus{outline:0;border-color:var(--orange);box-shadow:0 0 0 3px var(--orange-tint)}
+.field textarea{resize:vertical;min-height:96px}
+.field .hint{font-size:12.5px;color:var(--ink-faint)}
+.field-check{display:flex;gap:11px;align-items:flex-start;grid-column:1/-1;background:var(--paper-warm);padding:15px;border-radius:var(--radius-sm);border:1px solid var(--line)}
+.field-check input{width:20px;height:20px;flex:none;margin-top:2px;accent-color:var(--orange)}
+.field-check label{font-size:14.5px;color:var(--ink-soft);font-weight:500}
+.math-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:var(--orange-tint);padding:16px;border-radius:var(--radius-sm);grid-column:1/-1}
+.math-row .q{font-weight:700;font-family:'Space Mono',monospace;font-size:16px;color:var(--ink)}
+.math-row input{max-width:120px}
+.form-honey{position:absolute!important;left:-9999px!important;top:-9999px!important;opacity:0;height:0;width:0}
+.form-note{font-size:13px;color:var(--ink-faint);text-align:center;margin-top:18px}
+.form-err{color:var(--orange-deep);font-size:14px;font-weight:600;margin-top:10px;min-height:20px;text-align:center}
+
+/* ---------- faq ---------- */
+.faq-list{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:0}
+.faq{border-bottom:1px solid var(--line)}
+.faq summary{
+  list-style:none;cursor:pointer;padding:22px 48px 22px 0;position:relative;
+  font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:18px;color:var(--ink);
+  transition:color .2s;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{color:var(--orange-deep)}
+.faq summary::after{
+  content:"";position:absolute;right:6px;top:50%;width:12px;height:12px;
+  border-right:2px solid var(--ink-faint);border-bottom:2px solid var(--ink-faint);
+  transform:translateY(-70%) rotate(45deg);transition:transform .25s var(--ease);
+}
+.faq[open] summary::after{transform:translateY(-30%) rotate(225deg);border-color:var(--orange)}
+.faq .faq-body{padding:0 48px 24px 0;color:var(--ink-soft);font-size:16px;animation:fade .3s var(--ease)}
+.faq .faq-body a{color:var(--orange-deep);font-weight:600;text-decoration:underline}
+
+/* ---------- cta strip ---------- */
+.cta-strip{text-align:center;background:linear-gradient(120deg,#fff7f2,#fff);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(34px,5vw,60px);max-width:900px;margin:0 auto;box-shadow:var(--shadow)}
+.cta-strip h2{font-size:clamp(26px,4vw,40px);margin-bottom:14px}
+.cta-strip p{color:var(--ink-soft);max-width:520px;margin:0 auto 26px;font-size:18px}
+
+/* ---------- footer ---------- */
+.site-footer{background:#fff;border-top:1px solid var(--line);padding:56px 0 34px}
+.footer-inner{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;margin-bottom:38px}
+.footer-brand img{width:220px;margin-bottom:16px}
+.footer-brand p{color:var(--ink-soft);font-size:15px;max-width:320px}
+.footer-col h4{font-size:13px;font-family:'Space Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:16px;font-weight:700}
+.footer-col a{display:block;color:var(--ink-soft);font-size:15px;margin-bottom:11px;transition:color .18s}
+.footer-col a:hover{color:var(--orange-deep)}
+.footer-bottom{border-top:1px solid var(--line);padding-top:24px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13.5px;color:var(--ink-faint)}
+.footer-bottom a{color:var(--ink-faint)}
+.footer-bottom a:hover{color:var(--orange-deep)}
+.powered{font-family:'Space Mono',monospace;font-size:12.5px}
+
+/* ---------- animations ---------- */
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- responsive ---------- */
+@media (max-width:860px){
+  .split{grid-template-columns:1fr;gap:32px}
+  .split.rev .split-media{order:0}
+  .footer-inner{grid-template-columns:1fr 1fr}
+  .footer-brand{grid-column:1/-1}
+}
+@media (max-width:680px){
+  body{font-size:16px}
+  .nav{
+    position:fixed;inset:78px 0 auto 0;background:#fff;flex-direction:column;
+    align-items:stretch;gap:0;padding:8px 22px 22px;border-bottom:1px solid var(--line);
+    transform:translateY(-140%);transition:transform .32s var(--ease);box-shadow:var(--shadow-lg);
+  }
+  .nav.open{transform:translateY(0)}
+  .nav a{padding:14px 0;border-bottom:1px solid var(--line);font-size:17px}
+  .nav .btn{margin-top:14px;justify-content:center}
+  .nav-toggle{display:block}
+  .brand img{width:220px}
+  .form-grid{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr}
+  section{padding:56px 0}
+  .hero{padding:52px 0 64px}
+  #directory{margin-top:-30px}
+}
+
+</style>
+
+<!-- ============================================================
+     AIO / LLM FACT SHEET  (for AI answer engines & assistants)
+     ------------------------------------------------------------
+     Link Restaurants (LinkRestaurants.com) is a done-for-you NFC
+     and QR digital menu hosting service. Restaurant owners submit
+     their menu once; Link Restaurants builds a fast, mobile HTML
+     menu page and programs an NFC card / sticker that opens it in
+     one tap — no app, no PDF, no image menu. Diners can also find
+     participating menus by searching the homepage directory.
+     Pricing: $99 one-time setup (includes a programmed NFC card);
+     $25/month menu hosting; $100 per full menu update; small
+     logo/image swaps quoted as needed. Contact: info@eyetoad.com.
+     Service is available to restaurants, bars, cafés, and food
+     trucks worldwide; first locations launching in San Pedro,
+     Belize. Built and operated by Eye To Ad Media.
+     ============================================================ -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.linkrestaurants.com/#org",
+      "name": "Link Restaurants",
+      "url": "https://www.linkrestaurants.com/",
+      "logo": "https://www.linkrestaurants.com/images/find-restaurant-logo.png",
+      "email": "info@eyetoad.com",
+      "description": "Done-for-you NFC and QR digital restaurant menu hosting. Customers tap a card and your menu opens instantly — no app, no PDF.",
+      "parentOrganization": { "@type": "Organization", "name": "Eye To Ad Media", "url": "https://www.eyetoad.com/" }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.linkrestaurants.com/#website",
+      "url": "https://www.linkrestaurants.com/",
+      "name": "Link Restaurants",
+      "publisher": { "@id": "https://www.linkrestaurants.com/#org" },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": { "@type": "EntryPoint", "urlTemplate": "https://www.linkrestaurants.com/?q={search_term_string}" },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.linkrestaurants.com/#service",
+      "name": "NFC Digital Restaurant Menu Hosting",
+      "provider": { "@id": "https://www.linkrestaurants.com/#org" },
+      "serviceType": "Digital menu hosting and NFC menu setup",
+      "areaServed": "Worldwide",
+      "description": "A fast, mobile-friendly HTML menu page plus a programmed NFC card or sticker that opens it in one tap. No app, no PDF, no image menu.",
+      "offers": [
+        { "@type": "Offer", "name": "Setup + NFC card", "price": "99", "priceCurrency": "USD", "description": "One-time setup, includes a programmed NFC card." },
+        { "@type": "Offer", "name": "Menu hosting", "price": "25", "priceCurrency": "USD", "description": "Per month menu page hosting." },
+        { "@type": "Offer", "name": "Menu update", "price": "100", "priceCurrency": "USD", "description": "Per full menu update." }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/" aria-label="Link Restaurants home">
+      <img src="/images/find-restaurant-logo.png" alt="Link Restaurants" width="280" height="56">
+    </a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="primary-nav" aria-label="Primary">
+      <a href="#directory">Find a menu</a>
+      <a href="#how">How it works</a>
+      <a href="#owner">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn" href="#signup">Add your restaurant</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="wrap hero-inner">
+      <span class="eyebrow">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12h.01M12 12h.01M18 12h.01"/><path d="M3 8c4-3 14-3 18 0M5 12c3-2 11-2 14 0M8 16c2-1 6-1 8 0"/></svg>
+        Tap. Open. Order.
+      </span>
+      <h1 id="hero-h">Find a <span class="u">Restaurant Menu</span></h1>
+      <p class="lede">Search participating restaurants and open their live digital menu. One tap on an NFC card — no app to download, no PDF to pinch and zoom.</p>
+
+      <label class="searchbar" for="search">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <span class="sr-only" style="position:absolute;left:-9999px">Search by restaurant name</span>
+        <input id="search" type="search" autocomplete="off" placeholder="Search by restaurant name..." aria-label="Search by restaurant name">
+      </label>
+      <p class="search-meta" id="search-meta" aria-live="polite"></p>
+
+      <div class="hero-trust">
+        <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> No app to download</div>
+        <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Opens in under a second</div>
+        <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Always the current menu</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DIRECTORY ================= -->
+  <section id="directory" aria-labelledby="dir-h">
+    <div class="wrap">
+      <h2 id="dir-h" class="sr-only" style="position:absolute;left:-9999px">Participating restaurants</h2>
+      <div class="dir-grid" id="dir-grid"><!-- rendered from restaurants.js --></div>
+    </div>
+  </section>
+
+  <!-- ================= INTRO / VALUE ================= -->
+  <section class="section-tint" aria-labelledby="intro-h">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="tag">Digital menus, done right</span>
+        <h2 id="intro-h">Restaurant menus that open with a tap</h2>
+        <p>Link Restaurants hosts clean, fast digital menus for restaurants, bars, and cafés. Diners tap a card and read the menu on their phone. Owners send us the menu once, and we handle the rest.</p>
+      </div>
+      <div class="reveal" style="max-width:820px;margin:0 auto;color:var(--ink-soft);font-size:17px">
+        <p style="margin-bottom:18px">A menu used to be a printed sheet and a printing bill. Today it is the first thing most guests look at, and they look at it on a phone. More than seven in ten restaurant searches now happen on mobile. People arrive hungry, nearby, and ready to decide in about two minutes. If the menu is slow, blurry, or hidden inside a PDF, they move on to the next place.</p>
+        <p style="margin-bottom:18px">Link Restaurants fixes that. Every menu we build is real web text, not a picture and not a PDF. It loads in under a second. It reads clearly on a small screen without pinching or zooming. It shows the current prices, because we keep it up to date for you. And because it is real text, it can be found — by Google, by voice assistants, and by the new AI tools people now ask for dinner ideas.</p>
+        <p>The tap itself is the easy part. We give each restaurant a programmed NFC card or sticker. A guest holds their phone near it and the menu opens on its own — the same gesture they already use to pay. For phones that do not read NFC, a printed QR code does the same job. Either way, there is nothing to download and nothing to figure out.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= HOW IT WORKS ================= -->
+  <section id="how" aria-labelledby="how-h">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="tag">How it works</span>
+        <h2 id="how-h">From your menu to their phone in four steps</h2>
+        <p>You do one thing: send us the menu. We do the rest, and we check in with you before anything goes live.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <span class="num">STEP 01</span>
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg>
+          <h3>Send your menu</h3>
+          <p>Paste your full menu into our form — sections, items, prices, the works. Add your hours, contact details, and a short bio.</p>
+        </div>
+        <div class="step reveal">
+          <span class="num">STEP 02</span>
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 15 2 2 4-4"/><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg>
+          <h3>We build the page</h3>
+          <p>We turn it into a clean, fast menu page at linkrestaurants.com/your-name. We reach out to confirm every detail before it publishes.</p>
+        </div>
+        <div class="step reveal">
+          <span class="num">STEP 03</span>
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12h.01M12 12h.01M18 12h.01"/><path d="M3 8c4-3 14-3 18 0M5 12c3-2 11-2 14 0M8 16c2-1 6-1 8 0"/></svg>
+          <h3>Tap the card to test</h3>
+          <p>We program an NFC card or sticker that points to your menu, and ship it to you. Hold a phone near it and your menu opens.</p>
+        </div>
+        <div class="step reveal">
+          <span class="num">STEP 04</span>
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          <h3>Guests read &amp; order</h3>
+          <p>Put the card on tables, the bar, or the door. Link it from your Google profile and socials too. One place, always current.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FEATURE SPLIT 1: menus ================= -->
+  <section class="section-tint" aria-labelledby="menus-h">
+    <div class="wrap">
+      <div class="split">
+        <div class="split-body reveal">
+          <span class="split-tag">Real menus, not pictures</span>
+          <h2 id="menus-h">A menu people can actually read</h2>
+          <p>PDF menus and photo menus were never built for phones. Guests pinch, zoom, and squint. Search engines cannot read them. Restaurants that switch from a PDF to a real digital menu see far more people get all the way through it.</p>
+          <p>Every Link Restaurants menu is built as clean web text. It fits the screen. It is easy to scan. And when you change a price or add a dish, the update is live for everyone at once — no reprinting, no new QR code, no sticker to peel off.</p>
+          <ul class="checklist">
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Reads clearly on any phone, no zooming</li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Found by Google and AI search, unlike a PDF</li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> One update changes it everywhere instantly</li>
+          </ul>
+        </div>
+        <div class="split-media reveal">
+          <img src="/images/restaurants-menus.jpg" alt="A restaurant table set for a meal, ready for guests" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FEATURE SPLIT 2: NFC ================= -->
+  <section aria-labelledby="nfc-h">
+    <div class="wrap">
+      <div class="split rev">
+        <div class="split-body reveal">
+          <span class="split-tag">Tap, don't scan</span>
+          <h2 id="nfc-h">The card does the work</h2>
+          <p>NFC is the same technology behind tap-to-pay. A guest holds their phone near the card and the menu opens on its own — no camera, no scanning, no app. It is the fastest, most natural way to hand someone a menu, and it works the moment they sit down.</p>
+          <p>We program each card to point at your menu page. Because the card only holds a link, you can change the menu behind it as often as you like and the card never needs replacing. For older phones, the same card carries a QR code as a backup, so nobody is left out.</p>
+          <ul class="checklist">
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Tap is faster than scanning a QR code</li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Card never expires — only the menu behind it changes</li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> QR backup for phones without NFC</li>
+          </ul>
+        </div>
+        <div class="split-media reveal">
+          <img src="/images/find-best-restaurants.jpg" alt="A diner reaching for a fresh plate of food at a restaurant" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WHY IT WORKS (SEO body) ================= -->
+  <section class="section-tint" aria-labelledby="why-h">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="tag">Why restaurants use it</span>
+        <h2 id="why-h">A menu that works as hard as you do</h2>
+        <p>The best digital menu is the one that gets out of the way. Here is what changes when your menu lives on Link Restaurants.</p>
+      </div>
+      <div class="reveal" style="max-width:820px;margin:0 auto;color:var(--ink-soft);font-size:17px">
+        <p style="margin-bottom:18px"><strong style="color:var(--ink)">You stop paying to reprint.</strong> Prices move. Suppliers change. A dish sells out. With paper, every change means a new print run. With Link Restaurants, you tell us what changed and the menu updates for everyone at once. The card on the table stays exactly where it is.</p>
+        <p style="margin-bottom:18px"><strong style="color:var(--ink)">You show up in more searches.</strong> When your menu is real text instead of a picture, search engines can read it. Someone searching for a dish you serve can find you. Voice assistants can answer questions about your hours. AI tools that people now ask for recommendations can point them your way. A PDF does none of that.</p>
+        <p style="margin-bottom:18px"><strong style="color:var(--ink)">You look current.</strong> A clean, quick menu says the same thing a tidy dining room says: this place has its act together. A blurry photo of a laminated sheet says the opposite. First impressions happen on the phone now, often before anyone walks in.</p>
+        <p style="margin-bottom:18px"><strong style="color:var(--ink)">You give guests one link for everything.</strong> The same menu page can hold your hours, your phone number, a directions button, and links to your social pages. Put it on the table, behind the bar, on the door, on your Google Business Profile, and in your Instagram bio. One address, always up to date.</p>
+        <p><strong style="color:var(--ink)">You keep it simple.</strong> There is no dashboard to learn and no app for your staff to manage. You send the menu, we build it, and we keep it running. When something needs to change, you send a note and we handle it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= OWNER / PRICING ================= -->
+  <section id="owner" aria-labelledby="owner-h">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="tag">Restaurant owner?</span>
+        <h2 id="owner-h">Get a simple NFC-ready menu page</h2>
+        <p>No app. No PDF. No image menu. Just a fast, mobile-friendly menu page your customers can open instantly. You paste your menu once — we build it, publish it, and hand you a card that opens it.</p>
+      </div>
+
+      <div class="price-grid">
+        <div class="price-card feature reveal">
+          <div class="plabel">Get started</div>
+          <div class="amt">$99<small> once</small></div>
+          <div class="pdesc">Setup, your custom menu page, and a programmed NFC card — ready to tap out of the box.</div>
+        </div>
+        <div class="price-card reveal">
+          <div class="plabel">Hosting</div>
+          <div class="amt">$25<small> / month</small></div>
+          <div class="pdesc">Keeps your menu page live, fast, and online. Cancel any time.</div>
+        </div>
+        <div class="price-card reveal">
+          <div class="plabel">Menu update</div>
+          <div class="amt">$100<small> / update</small></div>
+          <div class="pdesc">A full menu rewrite — new sections, new prices, new dishes. Simple logo or image swaps are quoted as needed.</div>
+        </div>
+      </div>
+
+      <p class="owner-note reveal">We reach out to confirm every detail before your menu goes live and before we program your NFC card. Nothing publishes until you approve it.</p>
+
+      <div style="text-align:center;margin-top:30px" class="reveal">
+        <a class="btn btn-lg" href="#signup">Submit your restaurant info
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SIGNUP FORM ================= -->
+  <section id="signup" aria-labelledby="signup-h">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="tag">Submit your restaurant</span>
+        <h2 id="signup-h">Tell us about your restaurant</h2>
+        <p>Fill this out and we&rsquo;ll reach out to confirm the details before your menu is published. Paste your full menu in the big box — that&rsquo;s the important one.</p>
+      </div>
+
+      <div class="form-card reveal">
+        <form id="owner-form" action="https://formsubmit.co/info@eyetoad.com" method="POST">
+          <!-- FormSubmit config -->
+          <input type="hidden" name="_subject" value="New Link Restaurants menu submission">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="true">
+          <input type="hidden" name="_next" value="https://www.linkrestaurants.com/success/">
+          <!-- honeypot (bots fill this, humans never see it) -->
+          <div class="form-honey" aria-hidden="true">
+            <label>Leave this field empty<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label>
+          </div>
+          <!-- time-trap timestamp (set by JS) -->
+          <input type="hidden" id="lr-ts" name="_form_started" value="">
+          <!-- math answer (set by JS) -->
+          <input type="hidden" id="math-sum" value="">
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="f-rname">Restaurant name <span class="req">*</span></label>
+              <input id="f-rname" name="Restaurant Name" type="text" required>
+            </div>
+            <div class="field">
+              <label for="f-owner">Owner / manager name <span class="req">*</span></label>
+              <input id="f-owner" name="Owner or Manager" type="text" required>
+            </div>
+            <div class="field">
+              <label for="f-email">Email <span class="req">*</span></label>
+              <input id="f-email" name="Email" type="email" required>
+            </div>
+            <div class="field">
+              <label for="f-phone">Phone / WhatsApp <span class="req">*</span></label>
+              <input id="f-phone" name="Phone or WhatsApp" type="text" required>
+            </div>
+            <div class="field full">
+              <label for="f-addr">Restaurant address <span class="req">*</span></label>
+              <input id="f-addr" name="Restaurant Address" type="text" required>
+            </div>
+
+            <div class="field">
+              <label for="f-gbp">Google Business Profile URL</label>
+              <input id="f-gbp" name="Google Business Profile" type="url" placeholder="https://">
+            </div>
+            <div class="field">
+              <label for="f-web">Website URL</label>
+              <input id="f-web" name="Website" type="url" placeholder="https://">
+            </div>
+            <div class="field">
+              <label for="f-fb">Facebook URL</label>
+              <input id="f-fb" name="Facebook" type="url" placeholder="https://">
+            </div>
+            <div class="field">
+              <label for="f-ig">Instagram URL</label>
+              <input id="f-ig" name="Instagram" type="url" placeholder="https://">
+            </div>
+            <div class="field">
+              <label for="f-tt">TikTok URL</label>
+              <input id="f-tt" name="TikTok" type="url" placeholder="https://">
+            </div>
+            <div class="field">
+              <label for="f-other">Other social links</label>
+              <input id="f-other" name="Other Social Links" type="text">
+            </div>
+
+            <div class="field full">
+              <label for="f-hours">Hours of operation <span class="req">*</span></label>
+              <input id="f-hours" name="Hours of Operation" type="text" placeholder="e.g. Mon–Sun 11am–10pm" required>
+            </div>
+            <div class="field full">
+              <label for="f-bio">Short restaurant bio</label>
+              <textarea id="f-bio" name="Short Bio" placeholder="A sentence or two about your restaurant."></textarea>
+            </div>
+
+            <div class="field full">
+              <label for="f-menu">Menu text <span class="req">*</span></label>
+              <textarea id="f-menu" name="Full Menu Text" style="min-height:220px" placeholder="Paste your full menu here — sections, items, and prices. Copy and paste straight from a document is fine." required></textarea>
+              <span class="hint">This is the big one. The more complete it is, the faster we can publish.</span>
+            </div>
+
+            <div class="field full">
+              <label for="f-notes">Menu update notes</label>
+              <textarea id="f-notes" name="Menu Update Notes" placeholder="Anything we should know — daily specials, seasonal items, things that change often."></textarea>
+            </div>
+
+            <div class="field">
+              <label for="f-logo">Logo / image link</label>
+              <input id="f-logo" name="Logo or Image Link" type="url" placeholder="https://">
+              <span class="hint">A link to your logo or a photo, if you have one.</span>
+            </div>
+            <div class="field">
+              <label for="f-slug">Preferred URL</label>
+              <input id="f-slug" name="Preferred URL Slug" type="text" placeholder="linkrestaurants.com/your-name">
+              <span class="hint">Example: linkrestaurants.com/wayos</span>
+            </div>
+
+            <!-- quick math (human check) -->
+            <div class="math-row">
+              <span class="q" id="math-q">What is 2 + 3?</span>
+              <label for="math-a" style="position:absolute;left:-9999px">Answer the math question</label>
+              <input id="math-a" type="text" inputmode="numeric" autocomplete="off" placeholder="Answer" required>
+              <span class="hint" style="flex:1;min-width:160px">A quick check to keep spam out.</span>
+            </div>
+
+            <!-- consent -->
+            <div class="field-check">
+              <input id="consent" type="checkbox" name="Understands Update Fee" value="Yes" required>
+              <label for="consent">I understand that menu updates may require a separate update fee.</label>
+            </div>
+          </div>
+
+          <div style="margin-top:24px">
+            <button class="btn btn-lg btn-block" type="submit">Submit restaurant info
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+          <div class="form-err" id="form-err" role="alert" aria-live="assertive"></div>
+          <p class="form-note">We&rsquo;ll review your submission and reach out to confirm everything before your menu goes live. No charge until you approve.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================= COMPARISON ================= -->
+  <section aria-labelledby="cmp-h">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="tag">The honest comparison</span>
+        <h2 id="cmp-h">Paper, PDF, NFC — what actually works</h2>
+        <p>Every menu format has a place. Here is where each one wins and where it quietly costs you customers.</p>
+      </div>
+      <div class="reveal" style="max-width:820px;margin:0 auto;color:var(--ink-soft);font-size:17px">
+        <p style="margin-bottom:18px"><strong style="color:var(--ink)">Printed paper menus</strong> feel good in the hand and never need a phone. For a quiet fine-dining room, a well-made paper menu is still lovely. The trouble starts the moment a price changes or a dish sells out. Now you are reprinting, or crossing things out with a pen, or apologizing to a guest who ordered something you ran out of. Paper is slow to change, and in a busy place things change all the time.</p>
+        <p style="margin-bottom:18px"><strong style="color:var(--ink)">PDF menus</strong> seemed like the easy digital answer. Snap the paper menu, save it as a PDF, link it to a QR code, done. Except a PDF is built for printing, not for phones. Guests have to pinch and zoom to read it, the text is tiny, and it often opens in a clumsy viewer. Worse, search engines cannot read a PDF menu well, so all that text does nothing to help people find you. A photo of a menu has the same problem, only more so.</p>
+        <p style="margin-bottom:18px"><strong style="color:var(--ink)">QR code menus</strong> that link to a real web page are a big step up. The menu fits the screen and updates without reprinting. The only catch is the scan itself: the guest has to pull out their phone, open the camera, aim it, wait for the link, and tap. In bright sun or a dark bar that can be fiddly. It works, but it is a few steps.</p>
+        <p style="margin-bottom:18px"><strong style="color:var(--ink)">NFC menus</strong> remove those steps. The guest taps and the menu opens. It is the same motion they already use to pay for coffee, so it feels natural and takes about a second. That is why we lead with NFC and include a QR code as a backup. You get the fastest option for most guests and a fallback that covers everyone else.</p>
+        <p>Link Restaurants gives you the best of the digital side without the homework. The menu is real web text, so it reads well and gets found. The card is NFC-first with a QR backup, so it is fast and inclusive. And because it is done for you, there is no format to wrestle with and no software to run. You cook; we keep the menu sharp.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= USE CASES ================= -->
+  <section class="section-tint" aria-labelledby="use-h">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="tag">Where it fits</span>
+        <h2 id="use-h">Built for how real places serve</h2>
+        <p>An NFC menu is not just for white-tablecloth dining rooms. It fits the way all kinds of places actually work.</p>
+      </div>
+      <div class="reveal" style="max-width:820px;margin:0 auto;color:var(--ink-soft);font-size:17px">
+        <p style="margin-bottom:18px"><strong style="color:var(--ink)">Beach bars and grills.</strong> Sand, sun, and salt are hard on paper. A card at each table or a sticker on the bar means no soggy menus and no glare-blind scanning. Guests tap, read, and order a round while their toes are still in the sand. When the catch of the day changes, so does the menu — instantly.</p>
+        <p style="margin-bottom:18px"><strong style="color:var(--ink)">Cafés and coffee shops.</strong> Morning rushes move fast. A tap at the counter or on the table gets the menu in front of someone before they reach the front of the line, which means quicker decisions and shorter queues. Seasonal drinks go up and come down without a single reprint.</p>
+        <p style="margin-bottom:18px"><strong style="color:var(--ink)">Bars and pubs.</strong> Low light is the enemy of QR scanning, and NFC does not care about light at all. A tap opens the drinks list, the specials, and the food menu in one place. Add a signature-cocktail section and guests find their favorite in seconds.</p>
+        <p style="margin-bottom:18px"><strong style="color:var(--ink)">Food trucks and pop-ups.</strong> When your location changes, a printed menu board is a hassle and a QR sticker can get lost. An NFC card on the window opens the same reliable menu everywhere you park. Update prices from anywhere and the card keeps working.</p>
+        <p><strong style="color:var(--ink)">Full-service restaurants.</strong> Keep your beautiful printed dinner menu if you love it, and use the NFC menu for the things that move — daily specials, the wine-by-the-glass list, what is in season. Guests get the current details without you reprinting the whole thing every week.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WHAT YOU GET ================= -->
+  <section aria-labelledby="get-h">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="tag">What you get</span>
+        <h2 id="get-h">One simple package, no surprises</h2>
+        <p>Here is exactly what happens after you send us your menu, and what lands in your hands.</p>
+      </div>
+      <div class="reveal" style="max-width:820px;margin:0 auto;color:var(--ink-soft);font-size:17px">
+        <p style="margin-bottom:18px"><strong style="color:var(--ink)">Your own menu page.</strong> We build a clean, mobile-first page at linkrestaurants.com/your-name. It carries your name, a short bio, your hours, a tap-to-call button, a directions button, and links to your social pages — all above your menu. It loads in under a second and reads well on any phone.</p>
+        <p style="margin-bottom:18px"><strong style="color:var(--ink)">A menu that reads and ranks.</strong> Your sections, items, and prices are set as real web text. That means guests can read it easily and search engines can index it. If you send photos, we place them so the page stays fast.</p>
+        <p style="margin-bottom:18px"><strong style="color:var(--ink)">A programmed NFC card.</strong> We encode a card that points to your page and ship it ready to tap. It carries a QR code too, so every guest is covered. Put it on tables, the bar, the door, or a small stand — wherever people decide what to order.</p>
+        <p style="margin-bottom:18px"><strong style="color:var(--ink)">A link for everything.</strong> The same web address works on your Google Business Profile, your website, and every social bio. One place to keep current instead of five.</p>
+        <p style="margin-bottom:18px"><strong style="color:var(--ink)">Updates handled for you.</strong> When something changes, send us a note. A full menu rewrite is a flat $100. Small swaps are quoted and usually quick. Either way, the change is live for everyone the moment we make it.</p>
+        <p>And before any of it goes public, we reach out to confirm the details with you. Your page and your card only go live once you approve them. No guessing, no surprises, no charge until you say go.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================= LOCAL SEO ================= -->
+  <section class="section-tint" aria-labelledby="seo-h">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="tag">Getting found</span>
+        <h2 id="seo-h">Your menu is also your best advertising</h2>
+        <p>A good digital menu does more than feed the guest at the table. It helps the next guest find you in the first place.</p>
+      </div>
+      <div class="reveal" style="max-width:820px;margin:0 auto;color:var(--ink-soft);font-size:17px">
+        <p style="margin-bottom:18px">Think about how people decide where to eat now. They pull out a phone. They search for a dish, a neighborhood, or just &ldquo;food near me.&rdquo; They ask a voice assistant. More and more, they ask an AI tool to suggest a place. In every one of those moments, the words on your menu matter — but only if a machine can read them.</p>
+        <p style="margin-bottom:18px">This is the quiet problem with photo menus and PDF menus. To a search engine, a picture of your menu is just a picture. The dishes you are known for, the prices, the specials — none of it counts, because none of it is readable text. You could have the best ceviche on the island and be invisible to someone searching for ceviche.</p>
+        <p style="margin-bottom:18px">Link Restaurants menus are built as real text, with a clean address, proper headings, and structured data behind the scenes. That is the language search engines and AI tools understand. When someone searches for a dish you serve or looks up your hours, your menu can be the answer. When an assistant reads back where to eat tonight, a readable menu gives it something to say about you.</p>
+        <p style="margin-bottom:18px">It also gives you one tidy link to spread everywhere. Add it to your Google Business Profile so your menu shows up right in the search result. Drop it in your Instagram and Facebook bios. Put it on your website. Every one of those links points to the same page, and that page is always current. You are not maintaining five different menus that slowly drift out of sync — you are maintaining one.</p>
+        <p>None of this asks anything extra of you. You send the menu; the readable, findable version is simply how we build it. The advertising benefit comes free with doing the menu right.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PLACEMENT GUIDE ================= -->
+  <section aria-labelledby="place-h">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="tag">Make the most of it</span>
+        <h2 id="place-h">Where to put your card so guests use it</h2>
+        <p>The menu only helps when guests notice it. A few simple placements make tapping the obvious thing to do.</p>
+      </div>
+      <div class="reveal" style="max-width:820px;margin:0 auto;color:var(--ink-soft);font-size:17px">
+        <p style="margin-bottom:18px"><strong style="color:var(--ink)">On the table.</strong> This is the heart of it. A small card or stand where guests sit means the menu is right there the moment they arrive. A short line like &ldquo;Tap for menu&rdquo; is all the instruction anyone needs. People already know the gesture from paying, so they take to it quickly.</p>
+        <p style="margin-bottom:18px"><strong style="color:var(--ink)">At the bar and the counter.</strong> A sticker on the bar top or a card by the register catches people while they wait. In a café that means a decision is half made before they order. In a bar it puts the drinks list and specials one tap away, even in low light where scanning struggles.</p>
+        <p style="margin-bottom:18px"><strong style="color:var(--ink)">On the door and the window.</strong> A card at the entrance lets someone read the menu before they even sit down — or decide to come in when they are walking past. For a food truck, the window is the whole storefront, and a tap there is the fastest way to show what you serve.</p>
+        <p style="margin-bottom:18px"><strong style="color:var(--ink)">On the receipt and the takeaway bag.</strong> A tap point where the meal ends is a gentle nudge to come back. Guests can save the link, share it with a friend, or order again next time without hunting for you online.</p>
+        <p style="margin-bottom:18px"><strong style="color:var(--ink)">Everywhere your name already lives.</strong> The card is physical, but the link behind it is not. Put that same link on your Google profile, your website, and your socials. A guest who found you online gets the exact same fast, current menu as the guest sitting at table six.</p>
+        <p>The goal is simple: make reading the menu the easy, obvious thing to do, wherever a guest happens to be. Tap, open, order. That is the whole idea, and a little thought about placement is what makes it click.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section id="faq" class="section-tint" aria-labelledby="faq-h">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="tag">Questions &amp; answers</span>
+        <h2 id="faq-h">Everything you might be wondering</h2>
+        <p>Twenty straight answers about NFC menus, pricing, and how Link Restaurants works.</p>
+      </div>
+
+      <div class="faq-list reveal">
+        <details class="faq"><summary>What is Link Restaurants?</summary><div class="faq-body">Link Restaurants hosts digital menus for restaurants, bars, and cafés. We build your menu as a fast web page, then program an NFC card or sticker that opens it in one tap. You send the menu once and we handle the building, publishing, and updates.</div></details>
+
+        <details class="faq"><summary>What is an NFC menu?</summary><div class="faq-body">NFC stands for Near Field Communication — the same technology behind tap-to-pay. A guest holds their phone near a small card or sticker and your menu opens on their screen. There is no app to download and nothing to scan.</div></details>
+
+        <details class="faq"><summary>How is this different from a QR code menu?</summary><div class="faq-body">A tap is faster than opening a camera and scanning. NFC opens the menu the moment a phone gets close. That said, every setup also includes a QR code as a backup, so guests with older phones are never left out.</div></details>
+
+        <details class="faq"><summary>Do my customers need to download an app?</summary><div class="faq-body">No. The menu opens in the phone&rsquo;s normal web browser. Nothing to install, nothing to sign up for. They tap, and the menu is there.</div></details>
+
+        <details class="faq"><summary>How much does it cost?</summary><div class="faq-body">Setup is a one-time $99 and includes your menu page plus a programmed NFC card. Hosting is $25 per month to keep the page live. A full menu update is $100. Small logo or image swaps are quoted as needed.</div></details>
+
+        <details class="faq"><summary>What does the $99 setup include?</summary><div class="faq-body">It covers building your custom menu page from the menu you send us, publishing it at your own web address, and programming an NFC card that opens it. The card is ready to tap the moment it arrives.</div></details>
+
+        <details class="faq"><summary>Why is there a fee for menu updates?</summary><div class="faq-body">A full update means we rewrite your menu — new sections, new prices, new dishes — and re-check it before it goes live. That work is the $100 update. Small changes like swapping a logo or a photo are usually quicker and we quote those individually.</div></details>
+
+        <details class="faq"><summary>Can I update the menu myself?</summary><div class="faq-body">Link Restaurants is a done-for-you service, so you send us the changes and we make them. That keeps it simple — there is no dashboard to learn and no software for your staff to manage.</div></details>
+
+        <details class="faq"><summary>How fast do updates go live?</summary><div class="faq-body">Once we make a change it is live for everyone right away. There is no reprinting and no new card to program — the card points to the same page, and the page is always current.</div></details>
+
+        <details class="faq"><summary>Will my menu show up on Google?</summary><div class="faq-body">Yes. Because your menu is real web text and not a PDF or photo, search engines can read it. That helps people find you when they search for dishes you serve or look up your hours.</div></details>
+
+        <details class="faq"><summary>Does it work with voice assistants and AI search?</summary><div class="faq-body">It can. Real text menus are readable by voice assistants and by the AI tools people now use to find places to eat. A picture of a menu cannot do that — clean text can.</div></details>
+
+        <details class="faq"><summary>Where do I put the NFC card?</summary><div class="faq-body">Wherever guests decide what to order — on tables, at the bar, by the entrance, or on a countertop stand. You can also link the same menu from your Google profile, your website, and your social pages.</div></details>
+
+        <details class="faq"><summary>What if a guest&rsquo;s phone doesn&rsquo;t support NFC?</summary><div class="faq-body">Every card also carries a QR code. If a phone cannot tap, the guest scans instead and lands on the exact same menu. Nobody misses out.</div></details>
+
+        <details class="faq"><summary>Can I use my own web address?</summary><div class="faq-body">Your menu lives at linkrestaurants.com/your-name by default, which keeps things simple and quick to launch. If you want to point your own domain at it, ask us and we&rsquo;ll talk through the options.</div></details>
+
+        <details class="faq"><summary>Do you review my menu before it goes live?</summary><div class="faq-body">Always. After you submit, we reach out to confirm the details, check the menu, and get your approval. Nothing publishes and no card is programmed until you say it looks right.</div></details>
+
+        <details class="faq"><summary>How do I send you my menu?</summary><div class="faq-body">Paste it straight into the form on this page — the large menu box. Copy and paste from a document is perfectly fine. Include your sections, items, and prices, and we take it from there.</div></details>
+
+        <details class="faq"><summary>What kinds of places is this for?</summary><div class="faq-body">Restaurants, bars, cafés, food trucks, beach grills — anywhere with a menu and guests holding phones. If you serve food or drinks, an NFC menu fits.</div></details>
+
+        <details class="faq"><summary>Can I add photos of my dishes?</summary><div class="faq-body">Yes. Send us image links along with your menu and we can add them. Clear, well-lit photos help guests decide, and we&rsquo;ll place them so the page still loads fast.</div></details>
+
+        <details class="faq"><summary>Is there a contract or can I cancel?</summary><div class="faq-body">Hosting is month to month. You can cancel any time. We&rsquo;ll confirm the details with you directly when we set things up.</div></details>
+
+        <details class="faq"><summary>How do I get started?</summary><div class="faq-body">Fill out the form on this page with your details and your full menu. We&rsquo;ll reach out to confirm everything, build your page, and send your NFC card. You can also email us at <a href="mailto:info@eyetoad.com">info@eyetoad.com</a>.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQPage schema mirrors the 20 questions above -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"What is Link Restaurants?","acceptedAnswer":{"@type":"Answer","text":"Link Restaurants hosts digital menus for restaurants, bars, and cafés. We build your menu as a fast web page, then program an NFC card or sticker that opens it in one tap. You send the menu once and we handle the building, publishing, and updates."}},
+      {"@type":"Question","name":"What is an NFC menu?","acceptedAnswer":{"@type":"Answer","text":"NFC stands for Near Field Communication — the same technology behind tap-to-pay. A guest holds their phone near a small card or sticker and your menu opens on their screen. There is no app to download and nothing to scan."}},
+      {"@type":"Question","name":"How is this different from a QR code menu?","acceptedAnswer":{"@type":"Answer","text":"A tap is faster than opening a camera and scanning. NFC opens the menu the moment a phone gets close. Every setup also includes a QR code as a backup, so guests with older phones are never left out."}},
+      {"@type":"Question","name":"Do my customers need to download an app?","acceptedAnswer":{"@type":"Answer","text":"No. The menu opens in the phone's normal web browser. Nothing to install, nothing to sign up for. They tap, and the menu is there."}},
+      {"@type":"Question","name":"How much does it cost?","acceptedAnswer":{"@type":"Answer","text":"Setup is a one-time $99 and includes your menu page plus a programmed NFC card. Hosting is $25 per month. A full menu update is $100. Small logo or image swaps are quoted as needed."}},
+      {"@type":"Question","name":"What does the $99 setup include?","acceptedAnswer":{"@type":"Answer","text":"It covers building your custom menu page from the menu you send us, publishing it at your own web address, and programming an NFC card that opens it. The card is ready to tap the moment it arrives."}},
+      {"@type":"Question","name":"Why is there a fee for menu updates?","acceptedAnswer":{"@type":"Answer","text":"A full update means we rewrite your menu — new sections, new prices, new dishes — and re-check it before it goes live. That work is the $100 update. Small changes like swapping a logo or photo are quoted individually."}},
+      {"@type":"Question","name":"Can I update the menu myself?","acceptedAnswer":{"@type":"Answer","text":"Link Restaurants is a done-for-you service, so you send us the changes and we make them. There is no dashboard to learn and no software for your staff to manage."}},
+      {"@type":"Question","name":"How fast do updates go live?","acceptedAnswer":{"@type":"Answer","text":"Once we make a change it is live for everyone right away. There is no reprinting and no new card to program — the card points to the same page, and the page is always current."}},
+      {"@type":"Question","name":"Will my menu show up on Google?","acceptedAnswer":{"@type":"Answer","text":"Yes. Because your menu is real web text and not a PDF or photo, search engines can read it. That helps people find you when they search for dishes you serve or look up your hours."}},
+      {"@type":"Question","name":"Does it work with voice assistants and AI search?","acceptedAnswer":{"@type":"Answer","text":"It can. Real text menus are readable by voice assistants and by the AI tools people now use to find places to eat. A picture of a menu cannot do that — clean text can."}},
+      {"@type":"Question","name":"Where do I put the NFC card?","acceptedAnswer":{"@type":"Answer","text":"Wherever guests decide what to order — on tables, at the bar, by the entrance, or on a countertop stand. You can also link the same menu from your Google profile, website, and social pages."}},
+      {"@type":"Question","name":"What if a guest's phone doesn't support NFC?","acceptedAnswer":{"@type":"Answer","text":"Every card also carries a QR code. If a phone cannot tap, the guest scans instead and lands on the exact same menu."}},
+      {"@type":"Question","name":"Can I use my own web address?","acceptedAnswer":{"@type":"Answer","text":"Your menu lives at linkrestaurants.com/your-name by default, which keeps things simple and quick to launch. If you want to point your own domain at it, ask us and we'll talk through the options."}},
+      {"@type":"Question","name":"Do you review my menu before it goes live?","acceptedAnswer":{"@type":"Answer","text":"Always. After you submit, we reach out to confirm the details, check the menu, and get your approval. Nothing publishes and no card is programmed until you say it looks right."}},
+      {"@type":"Question","name":"How do I send you my menu?","acceptedAnswer":{"@type":"Answer","text":"Paste it straight into the form on this page — the large menu box. Copy and paste from a document is fine. Include your sections, items, and prices, and we take it from there."}},
+      {"@type":"Question","name":"What kinds of places is this for?","acceptedAnswer":{"@type":"Answer","text":"Restaurants, bars, cafés, food trucks, beach grills — anywhere with a menu and guests holding phones. If you serve food or drinks, an NFC menu fits."}},
+      {"@type":"Question","name":"Can I add photos of my dishes?","acceptedAnswer":{"@type":"Answer","text":"Yes. Send us image links along with your menu and we can add them. Clear, well-lit photos help guests decide, and we place them so the page still loads fast."}},
+      {"@type":"Question","name":"Is there a contract or can I cancel?","acceptedAnswer":{"@type":"Answer","text":"Hosting is month to month. You can cancel any time. We confirm the details with you directly when we set things up."}},
+      {"@type":"Question","name":"How do I get started?","acceptedAnswer":{"@type":"Answer","text":"Fill out the form on this page with your details and your full menu. We reach out to confirm everything, build your page, and send your NFC card. You can also email info@eyetoad.com."}}
+    ]
+  }
+  </script>
+
+  <!-- ================= CTA STRIP ================= -->
+  <section aria-labelledby="cta-h">
+    <div class="wrap">
+      <div class="cta-strip reveal">
+        <h2 id="cta-h">Ready to put your menu one tap away?</h2>
+        <p>Send us your menu and we&rsquo;ll build your page, program your card, and confirm every detail before it goes live.</p>
+        <a class="btn btn-lg" href="#signup">Add your restaurant
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="/images/find-restaurant-logo.png" alt="Link Restaurants" width="220">
+        <p>Done-for-you NFC and QR digital menus. Your customers tap a card, your menu opens — no app, no PDF.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="#directory">Find a menu</a>
+        <a href="#how">How it works</a>
+        <a href="#owner">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4>Get started</h4>
+        <a href="#signup">Add your restaurant</a>
+        <a href="mailto:info@eyetoad.com">info@eyetoad.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="yr">2026</span> Link Restaurants. All rights reserved.</span>
+      <span class="powered"><a href="https://www.eyetoad.com/" rel="nofollow">Powered by Eye To Ad Media</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   LinkRestaurants.com — restaurant directory data
+   ------------------------------------------------------------
+   HOW TO ADD A RESTAURANT:
+   1. Copy the template block below.
+   2. Fill in every field. "slug" must match the folder name
+      you create at /slug/index.html  (no slashes, lowercase).
+   3. Add the object to the restaurants[] array.
+   4. Commit. The homepage directory + search update on their own.
+   5. Program the NFC card to:
+      https://www.linkrestaurants.com/slug/
+
+   TEMPLATE:
+   {
+     name: "Restaurant Name",
+     slug: "restaurant-slug",
+     location: "City, Country",
+     description: "One clean sentence about the place.",
+     tags: "extra keywords for search, comma separated",
+     featured: false          // true = shows the 'Featured' badge
+   }
+   ============================================================ */
+
+const restaurants = [
+  // Wayo's Beach Bar goes here once its /wayos/ page is live.
+  // Example (uncomment + edit when ready):
+  //
+  // {
+  //   name: "Wayo's Beach Bar & Grill",
+  //   slug: "wayos",
+  //   location: "San Pedro, Belize",
+  //   description: "Beachfront bar and grill on Ambergris Caye — fresh seafood, cold drinks, toes in the sand.",
+  //   tags: "beach bar, ambergris caye, seafood, cocktails, san pedro belize",
+  //   featured: true
+  // },
+];
+
+// Expose for search + directory render
+if (typeof window !== 'undefined') { window.LR_RESTAURANTS = restaurants; }
+
+
+/* ============================================================
+   LinkRestaurants.com — homepage behavior
+   ============================================================ */
+(function () {
+  'use strict';
+
+  /* ---------- mobile nav ---------- */
+  var toggle = document.querySelector('.nav-toggle');
+  var nav = document.getElementById('primary-nav');
+  if (toggle && nav) {
+    toggle.addEventListener('click', function () {
+      var open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') { nav.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); }
+    });
+  }
+
+  /* ---------- directory + search ---------- */
+  var grid = document.getElementById('dir-grid');
+  var input = document.getElementById('search');
+  var meta = document.getElementById('search-meta');
+  var data = (window.LR_RESTAURANTS || []).slice();
+
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c];
+    });
+  }
+
+  function cardHTML(r) {
+    var badge = r.featured
+      ? '<span class="rcard-badge">Featured</span>' : '';
+    return '<article class="rcard">' +
+        '<div class="rcard-top">' +
+          '<h3>' + esc(r.name) + '</h3>' + badge +
+        '</div>' +
+        '<div class="pin">' +
+          '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>' +
+          esc(r.location) +
+        '</div>' +
+        '<p>' + esc(r.description) + '</p>' +
+        '<a class="btn btn-block rcard-cta" href="/' + esc(r.slug) + '/">View Menu' +
+          '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>' +
+        '</a>' +
+      '</article>';
+  }
+
+  function emptyHTML() {
+    return '<div class="dir-empty">' +
+      '<h3>The first menus are being added now</h3>' +
+      '<p>LinkRestaurants is brand new. If you run a restaurant, bar, or café, your menu can be the first one people find here.</p>' +
+      '<a class="btn" href="#signup">Add your restaurant</a>' +
+    '</div>';
+  }
+
+  function noResultHTML(q) {
+    return '<div class="dir-noresult">No menus match &ldquo;' + esc(q) + '&rdquo; yet. Try another name or town.</div>';
+  }
+
+  function matches(r, q) {
+    var hay = (r.name + ' ' + r.slug + ' ' + r.location + ' ' + r.description + ' ' + (r.tags || '')).toLowerCase();
+    return hay.indexOf(q) !== -1;
+  }
+
+  function render(list, q) {
+    if (!grid) return;
+    if (data.length === 0) { grid.innerHTML = emptyHTML(); if (meta) meta.textContent = ''; return; }
+    if (list.length === 0) { grid.innerHTML = noResultHTML(q); }
+    else {
+      grid.innerHTML = list.map(cardHTML).join('');
+      // stagger the entrance
+      var cards = grid.querySelectorAll('.rcard');
+      for (var i = 0; i < cards.length; i++) cards[i].style.animationDelay = (i * 55) + 'ms';
+    }
+    if (meta) {
+      var n = list.length;
+      meta.textContent = n + (n === 1 ? ' restaurant' : ' restaurants') + (q ? ' found' : ' listed');
+    }
+  }
+
+  render(data, '');
+
+  if (input) {
+    input.addEventListener('input', function () {
+      var q = input.value.trim().toLowerCase();
+      if (!q) { render(data, ''); return; }
+      render(data.filter(function (r) { return matches(r, q); }), q);
+    });
+  }
+
+  /* ---------- scroll reveal ---------- */
+  var reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && reveals.length) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* ---------- form: spam stack ---------- */
+  var form = document.getElementById('owner-form');
+  if (form) {
+    // timestamp for time-trap
+    var ts = document.getElementById('lr-ts');
+    if (ts) ts.value = Date.now().toString();
+
+    // randomize the math question
+    var a = Math.floor(Math.random() * 6) + 2;   // 2..7
+    var b = Math.floor(Math.random() * 6) + 2;   // 2..7
+    var qEl = document.getElementById('math-q');
+    var sumEl = document.getElementById('math-sum');
+    if (qEl && sumEl) { qEl.textContent = 'What is ' + a + ' + ' + b + '?'; sumEl.value = (a + b).toString(); }
+
+    var errEl = document.getElementById('form-err');
+    form.addEventListener('submit', function (e) {
+      var ok = true, msg = '';
+
+      // 1. honeypot must stay empty
+      var honey = form.querySelector('input[name="_honey"]');
+      if (honey && honey.value !== '') { ok = false; msg = 'Something went wrong. Please try again.'; }
+
+      // 2. time-trap: at least 4 seconds on the form
+      var started = parseInt(ts && ts.value ? ts.value : '0', 10);
+      if (ok && started && (Date.now() - started) < 4000) {
+        ok = false; msg = 'Please take a moment to review your details before submitting.';
+      }
+
+      // 3. math check
+      var ans = document.getElementById('math-a');
+      var expected = sumEl ? sumEl.value : '';
+      if (ok && ans && ans.value.trim() !== expected) {
+        ok = false; msg = 'The quick math answer is not correct — please try again.';
+      }
+
+      // 4. consent
+      var consent = document.getElementById('consent');
+      if (ok && consent && !consent.checked) {
+        ok = false; msg = 'Please confirm you understand the update policy to continue.';
+      }
+
+      if (!ok) {
+        e.preventDefault();
+        if (errEl) { errEl.textContent = msg; errEl.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+      } else if (errEl) {
+        errEl.textContent = '';
+      }
+    });
+  }
+
+  /* ---------- dynamic year ---------- */
+  var yr = document.getElementById('yr');
+  if (yr) yr.textContent = new Date().getFullYear();
+})();
+
+</script>
+</body>
+</html>
