@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Turbocharge Your Menu | NFC Digital Menus Built to Be Found | Link Restaurants</title>
 <meta name="description" content="Your menu should do more than list food. Link Restaurants turns it into an NFC tap-to-open web page optimized to be found on Google and cited by AI search — no app, no PDF, no reprinting.">
-<link rel="canonical" href="https://www.linkrestaurants.com/">
+<link rel="canonical" href="https://linkrestaurants.com/">
 
 <!-- favicon -->
 <link rel="icon" type="image/png" href="/images/find-restaurants-favicon.png">
@@ -15,15 +15,15 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Turbocharge Your Menu | NFC Digital Menus Built to Be Found">
 <meta property="og:description" content="A printed menu lists your food. A Link Restaurants menu gets you found. Tap-to-open NFC menus, optimized for Google and AI search.">
-<meta property="og:url" content="https://www.linkrestaurants.com/">
-<meta property="og:image" content="https://www.linkrestaurants.com/images/restaurant-marketing-expert.png">
+<meta property="og:url" content="https://linkrestaurants.com/">
+<meta property="og:image" content="https://linkrestaurants.com/images/restaurant-marketing-expert.png">
 <meta property="og:image:width" content="1672">
 <meta property="og:image:height" content="941">
 <meta property="og:site_name" content="Link Restaurants">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Turbocharge Your Menu | NFC Digital Menus Built to Be Found">
 <meta name="twitter:description" content="A printed menu lists your food. A Link Restaurants menu gets you found. Tap to open, optimized for Google and AI search.">
-<meta name="twitter:image" content="https://www.linkrestaurants.com/images/restaurant-marketing-expert.png">
+<meta name="twitter:image" content="https://linkrestaurants.com/images/restaurant-marketing-expert.png">
 
 <!-- crawling -->
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -530,7 +530,7 @@ section{padding:78px 0}
      assistants such as ChatGPT, Gemini, Perplexity and Copilot.
      Diners can also find participating menus by searching the
      homepage directory, which supports deep links in the form
-     https://www.linkrestaurants.com/?q=SEARCH_TERM
+     https://linkrestaurants.com/?q=SEARCH_TERM
      Positioning: a printed paper or plastic menu lists your food;
      a Link Restaurants menu also helps people find your
      restaurant in the first place.
@@ -1051,7 +1051,7 @@ section{padding:78px 0}
           <input type="hidden" name="_subject" value="New Link Restaurants menu submission">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="https://www.linkrestaurants.com/success/">
+          <input type="hidden" name="_next" value="https://linkrestaurants.com/success/">
           <!-- honeypot (bots fill this, humans never see it) -->
           <div class="form-honey" aria-hidden="true">
             <label>Leave this field empty<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label>
@@ -1410,7 +1410,7 @@ section{padding:78px 0}
    4. Commit. The homepage directory, the search, and the
       ItemList structured data all update on their own.
    5. Program the NFC card to:
-      https://www.linkrestaurants.com/slug/
+      https://linkrestaurants.com/slug/
 
    TEMPLATE:
    {
@@ -1425,18 +1425,17 @@ section{padding:78px 0}
    ============================================================ */
 
 const restaurants = [
-  // Wayo's Beach Bar goes here once its /wayos/ page is live.
-  // Example (uncomment + edit when ready):
-  //
-  // {
-  //   name: "Wayo's Beach Bar & Grill",
-  //   slug: "wayos",
-  //   location: "San Pedro, Belize",
-  //   cuisine: "Seafood and grill",
-  //   description: "Beachfront bar and grill on Ambergris Caye — fresh seafood, cold drinks, toes in the sand.",
-  //   tags: "beach bar, ambergris caye, seafood, cocktails, san pedro belize",
-  //   featured: true
-  // },
+
+  {
+    name: "Wayo's Beach Bar",
+    slug: "wayos",
+    location: "San Pedro, Belize",
+    cuisine: "Belizean, seafood, bar & grill",
+    description: "Beachfront bar and grill built out over the water on Ambergris Caye — ceviche, fresh fish of the day, cocktails and live music.",
+    tags: "wayos bar, beach bar, ambergris caye, belize, seafood, ceviche, conch, cocktails, live music, san pedro belize, boca del rio, you catch we cook, happy hour",
+    featured: true
+  },
+
 ];
 
 // Expose for search + directory render
@@ -1568,8 +1567,8 @@ if (typeof window !== 'undefined') { window.LR_RESTAURANTS = restaurants; }
       var rest = {
         "@type": "Restaurant",
         "name": r.name,
-        "url": "https://www.linkrestaurants.com/" + r.slug + "/",
-        "hasMenu": "https://www.linkrestaurants.com/" + r.slug + "/",
+        "url": "https://linkrestaurants.com/" + r.slug + "/",
+        "hasMenu": "https://linkrestaurants.com/" + r.slug + "/",
         "description": r.description
       };
       if (r.cuisine) rest.servesCuisine = r.cuisine;
@@ -1579,7 +1578,7 @@ if (typeof window !== 'undefined') { window.LR_RESTAURANTS = restaurants; }
     var node = {
       "@context": "https://schema.org",
       "@type": "ItemList",
-      "@id": "https://www.linkrestaurants.com/#directory",
+      "@id": "https://linkrestaurants.com/#directory",
       "name": "Participating restaurants on Link Restaurants",
       "numberOfItems": data.length,
       "itemListElement": items
@@ -1824,16 +1823,16 @@ if (typeof window !== 'undefined') { window.LR_RESTAURANTS = restaurants; }
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://www.linkrestaurants.com/#org",
+      "@id": "https://linkrestaurants.com/#org",
       "name": "Link Restaurants",
-      "url": "https://www.linkrestaurants.com/",
+      "url": "https://linkrestaurants.com/",
       "logo": {
         "@type": "ImageObject",
-        "@id": "https://www.linkrestaurants.com/#logo",
-        "url": "https://www.linkrestaurants.com/images/find-restaurant-logo.png",
+        "@id": "https://linkrestaurants.com/#logo",
+        "url": "https://linkrestaurants.com/images/find-restaurant-logo.png",
         "caption": "Link Restaurants"
       },
-      "image": { "@id": "https://www.linkrestaurants.com/#logo" },
+      "image": { "@id": "https://linkrestaurants.com/#logo" },
       "email": "info@eyetoad.com",
       "description": "Done-for-you NFC and QR digital restaurant menu hosting, optimized for search and AI discovery. Customers tap a card and your menu opens instantly — no app, no PDF.",
       "knowsAbout": [
@@ -1855,30 +1854,30 @@ if (typeof window !== 'undefined') { window.LR_RESTAURANTS = restaurants; }
     },
     {
       "@type": "WebSite",
-      "@id": "https://www.linkrestaurants.com/#website",
-      "url": "https://www.linkrestaurants.com/",
+      "@id": "https://linkrestaurants.com/#website",
+      "url": "https://linkrestaurants.com/",
       "name": "Link Restaurants",
       "description": "Search participating restaurant menus, or get an NFC-ready digital menu page optimized to be found on Google and AI search.",
-      "publisher": { "@id": "https://www.linkrestaurants.com/#org" },
+      "publisher": { "@id": "https://linkrestaurants.com/#org" },
       "inLanguage": "en",
       "potentialAction": {
         "@type": "SearchAction",
-        "target": { "@type": "EntryPoint", "urlTemplate": "https://www.linkrestaurants.com/?q={search_term_string}" },
+        "target": { "@type": "EntryPoint", "urlTemplate": "https://linkrestaurants.com/?q={search_term_string}" },
         "query-input": "required name=search_term_string"
       }
     },
     {
       "@type": "WebPage",
-      "@id": "https://www.linkrestaurants.com/#webpage",
-      "url": "https://www.linkrestaurants.com/",
+      "@id": "https://linkrestaurants.com/#webpage",
+      "url": "https://linkrestaurants.com/",
       "name": "Turbocharge Your Menu | NFC Digital Menus Built to Be Found | Link Restaurants",
       "description": "Your menu should do more than list food. Link Restaurants turns it into an NFC tap-to-open web page optimized to be found on Google and cited by AI search — no app, no PDF, no reprinting.",
-      "isPartOf": { "@id": "https://www.linkrestaurants.com/#website" },
-      "about": { "@id": "https://www.linkrestaurants.com/#org" },
-      "publisher": { "@id": "https://www.linkrestaurants.com/#org" },
+      "isPartOf": { "@id": "https://linkrestaurants.com/#website" },
+      "about": { "@id": "https://linkrestaurants.com/#org" },
+      "publisher": { "@id": "https://linkrestaurants.com/#org" },
       "primaryImageOfPage": {
         "@type": "ImageObject",
-        "url": "https://www.linkrestaurants.com/images/restaurant-marketing-expert.png",
+        "url": "https://linkrestaurants.com/images/restaurant-marketing-expert.png",
         "width": 1672,
         "height": 941,
         "caption": "Turbocharge your menu — tabletop NFC scanning plus optimization to come up in search"
@@ -1887,10 +1886,10 @@ if (typeof window !== 'undefined') { window.LR_RESTAURANTS = restaurants; }
       "dateModified": "2026-08-11",
       "inLanguage": "en",
       "significantLink": [
-        "https://www.linkrestaurants.com/#turbocharge",
-        "https://www.linkrestaurants.com/#optimize",
-        "https://www.linkrestaurants.com/#owner",
-        "https://www.linkrestaurants.com/#signup"
+        "https://linkrestaurants.com/#turbocharge",
+        "https://linkrestaurants.com/#optimize",
+        "https://linkrestaurants.com/#owner",
+        "https://linkrestaurants.com/#signup"
       ],
       "speakable": {
         "@type": "SpeakableSpecification",
@@ -1899,16 +1898,16 @@ if (typeof window !== 'undefined') { window.LR_RESTAURANTS = restaurants; }
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://www.linkrestaurants.com/#breadcrumb",
+      "@id": "https://linkrestaurants.com/#breadcrumb",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Link Restaurants", "item": "https://www.linkrestaurants.com/" }
+        { "@type": "ListItem", "position": 1, "name": "Link Restaurants", "item": "https://linkrestaurants.com/" }
       ]
     },
     {
       "@type": "Service",
-      "@id": "https://www.linkrestaurants.com/#service",
+      "@id": "https://linkrestaurants.com/#service",
       "name": "NFC Digital Restaurant Menu Hosting and Optimization",
-      "provider": { "@id": "https://www.linkrestaurants.com/#org" },
+      "provider": { "@id": "https://linkrestaurants.com/#org" },
       "serviceType": "Digital menu hosting, NFC menu setup, and menu search optimization",
       "areaServed": "Worldwide",
       "audience": { "@type": "BusinessAudience", "audienceType": "Restaurant, bar, café and food truck owners" },
@@ -1932,7 +1931,7 @@ if (typeof window !== 'undefined') { window.LR_RESTAURANTS = restaurants; }
     },
     {
       "@type": "HowTo",
-      "@id": "https://www.linkrestaurants.com/#howto",
+      "@id": "https://linkrestaurants.com/#howto",
       "name": "How to get an NFC digital menu for your restaurant",
       "description": "Four steps from the menu you already have to a tap-to-open, search-optimized menu page.",
       "step": [
@@ -1944,8 +1943,8 @@ if (typeof window !== 'undefined') { window.LR_RESTAURANTS = restaurants; }
     },
     {
       "@type": "FAQPage",
-      "@id": "https://www.linkrestaurants.com/#faq",
-      "isPartOf": { "@id": "https://www.linkrestaurants.com/#webpage" },
+      "@id": "https://linkrestaurants.com/#faq",
+      "isPartOf": { "@id": "https://linkrestaurants.com/#webpage" },
       "mainEntity": [
         {"@type":"Question","name":"What is Link Restaurants?","acceptedAnswer":{"@type":"Answer","text":"Link Restaurants hosts digital menus for restaurants, bars, and cafés. We build your menu as a fast web page, optimize it so search engines and AI assistants can read every dish, then program an NFC card or sticker that opens it in one tap. You send the menu once and we handle the building, publishing, and updates."}},
         {"@type":"Question","name":"What does turbocharge your menu actually mean?","acceptedAnswer":{"@type":"Answer","text":"It means turning your menu from a static list into a working piece of marketing. We rebuild it as a fast web page where every dish and price is real readable text, add structured data so machines understand what you serve, give it a clean permanent address, and put it behind an NFC tap. The menu then feeds the guest at the table and helps the next guest find you."}},
