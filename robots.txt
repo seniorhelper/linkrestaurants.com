@@ -2,6 +2,7 @@
 User-agent: *
 Allow: /
 
+# --- AI assistants & answer engines ---
 User-agent: GPTBot
 Allow: /
 User-agent: ChatGPT-User
@@ -14,13 +15,35 @@ User-agent: anthropic-ai
 Allow: /
 User-agent: Claude-Web
 Allow: /
+User-agent: Claude-User
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
 User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
 Allow: /
 User-agent: Google-Extended
 Allow: /
+User-agent: Applebot
+Allow: /
 User-agent: Applebot-Extended
+Allow: /
+User-agent: Amazonbot
+Allow: /
+User-agent: meta-externalagent
+Allow: /
+User-agent: Bytespider
+Allow: /
+User-agent: YouBot
+Allow: /
+User-agent: cohere-ai
+Allow: /
+User-agent: Diffbot
+Allow: /
+User-agent: PetalBot
 Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://www.linkrestaurants.com/sitemap.xml
+Sitemap: https://linkrestaurants.com/sitemap.xml
