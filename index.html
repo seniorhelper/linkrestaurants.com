@@ -536,7 +536,7 @@ section{padding:78px 0}
      restaurant in the first place.
      Pricing: $99 one-time setup (includes a programmed NFC card);
      $25/month menu hosting; $100 per full menu update; small
-     logo/image swaps quoted as needed. Contact: info@eyetoad.com.
+     logo/image swaps quoted as needed. Contact: the form on this page.
      Service is available to restaurants, bars, cafés, and food
      trucks worldwide; first locations launching in San Pedro,
      Belize. Built and operated by Eye To Ad Media.
@@ -1046,12 +1046,11 @@ section{padding:78px 0}
       </div>
 
       <div class="form-card reveal">
-        <form id="owner-form" method="POST" data-fs="info@eyetoad.com" novalidate>
+        <form id="owner-form" method="POST" data-a="aW5mbw==" data-b="ZXlldG9hZC5jb20=" novalidate>
           <!-- FormSubmit config (endpoint assembled at submit time) -->
-          <input type="hidden" name="_subject" value="New Link Restaurants menu submission">
+          <input type="hidden" name="_subject" value="New lead — linkrestaurants.com (menu submission)">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="https://linkrestaurants.com/success/">
           <!-- honeypot (bots fill this, humans never see it) -->
           <div class="form-honey" aria-hidden="true">
             <label>Leave this field empty<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label>
@@ -1288,7 +1287,7 @@ section{padding:78px 0}
       <div class="section-head reveal">
         <span class="tag">Questions &amp; answers</span>
         <h2 id="faq-h">Everything you might be wondering</h2>
-        <p>Twenty-seven straight answers about NFC menus, search visibility, pricing, and how Link Restaurants works.</p>
+        <p>Thirty straight answers about NFC menus, search visibility, pricing, and how Link Restaurants works.</p>
       </div>
 
       <div class="faq-list reveal">
@@ -1342,9 +1341,15 @@ section{padding:78px 0}
 
         <details class="faq"><summary>Can I add photos of my dishes?</summary><div class="faq-body">Yes. Send us image links along with your menu and we can add them. Clear, well-lit photos help guests decide, and we&rsquo;ll place them so the page still loads fast.</div></details>
 
+        <details class="faq"><summary>Does the NFC card need batteries or charging?</summary><div class="faq-body">No. NFC tags are passive: they have no battery and draw the tiny amount of power they need from the guest&rsquo;s phone when it is held close. As long as the card is not cracked or stuck to a metal surface that blocks the signal, it keeps working.</div></details>
+
+        <details class="faq"><summary>Should I link my menu from my Google Business Profile?</summary><div class="faq-body">Yes. Google Business Profile has a menu link field for restaurants, and putting your Link Restaurants menu address there means diners who find you on Google or Maps reach the same up-to-date menu your guests open at the table. Use the same link on your website and social profiles so every path leads to one menu.</div></details>
+
+        <details class="faq"><summary>Can my menu show allergens and dietary information?</summary><div class="faq-body">Yes. Dishes can be labelled in plain text, for example vegetarian, vegan, gluten-free or contains nuts, which guests can read and search engines can index. Send us the labels exactly as your kitchen confirms them, and keep encouraging guests with allergies to tell staff, since a menu label is never a substitute for that conversation.</div></details>
+
         <details class="faq"><summary>Is there a contract or can I cancel?</summary><div class="faq-body">Hosting is month to month. You can cancel any time. We&rsquo;ll confirm the details with you directly when we set things up.</div></details>
 
-        <details class="faq"><summary>How do I get started?</summary><div class="faq-body">Fill out the form on this page with your details and your full menu. We&rsquo;ll reach out to confirm everything, build your page, and send your NFC card. You can also email us at <a href="mailto:info@eyetoad.com">info@eyetoad.com</a>.</div></details>
+        <details class="faq"><summary>How do I get started?</summary><div class="faq-body">Fill out the form on this page with your details and your full menu. We&rsquo;ll reach out to confirm everything, build your page, and send your NFC card. You can also call 1-800-481-8638.</div></details>
       </div>
     </div>
   </section>
@@ -1385,7 +1390,7 @@ section{padding:78px 0}
       <div class="footer-col">
         <h4>Get started</h4>
         <a href="#signup">Add your restaurant</a>
-        <a href="mailto:info@eyetoad.com">info@eyetoad.com</a>
+        <a class="eml" data-a="aW5mbw==" data-b="ZXlldG9hZC5jb20=" data-show href="/#signup">email us</a>
         <a href="/sitemap.xml">XML sitemap</a>
         <a href="/robots.txt">robots.txt</a>
       </div>
@@ -1718,9 +1723,8 @@ if (typeof window !== 'undefined') { window.LR_RESTAURANTS = restaurants; }
     var btn = document.getElementById('lr-submit');
     var SPAM = /\b(seo services|backlink|crypto|casino|viagra|loan offer|bitcoin|escort|porn|guest post|cheap traffic)\b/i;
 
-    function buildAction(f) {
-      var to = f.getAttribute('data-fs') || '';
-      return 'https://formsubmit.co/' + to;
+    function addr(f) {
+      return atob(f.getAttribute('data-a')) + String.fromCharCode(64) + atob(f.getAttribute('data-b'));
     }
     function fail(msg) {
       if (errEl) { errEl.textContent = msg; errEl.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
@@ -1735,10 +1739,10 @@ if (typeof window !== 'undefined') { window.LR_RESTAURANTS = restaurants; }
       var honey = form.querySelector('input[name="_honey"]');
       if (honey && honey.value !== '') { return; }
 
-      // 2. time-trap: at least 4 seconds on the form
+      // 2. time-trap: at least 3.5 seconds on the form
       var started = parseInt(ts && ts.value ? ts.value : '0', 10);
-      if (started && (Date.now() - started) < 4000) {
-        return fail('Please take a moment to review your details before submitting.');
+      if (!started || (Date.now() - started) < 3500) {
+        return fail('Give the form a moment, then send again.');
       }
 
       // 3. throttle: one submission per minute per device
@@ -1777,10 +1781,9 @@ if (typeof window !== 'undefined') { window.LR_RESTAURANTS = restaurants; }
 
       // passed — send
       if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
-      var action = buildAction(form);
       var payload = new FormData(form);
 
-      fetch('https://formsubmit.co/ajax/' + form.getAttribute('data-fs'), {
+      fetch('https://formsubmit.co/ajax/' + addr(form), {
         method: 'POST', body: payload, headers: { 'Accept': 'application/json' }
       }).then(function (r) {
         if (!r.ok) throw new Error('bad');
@@ -1791,21 +1794,8 @@ if (typeof window !== 'undefined') { window.LR_RESTAURANTS = restaurants; }
         form.reset();
         if (btn) btn.textContent = 'Sent';
       }).catch(function () {
-        // fallback: hidden-form POST into a hidden iframe
-        try {
-          var ifr = document.createElement('iframe');
-          ifr.name = 'lr_fb'; ifr.style.display = 'none';
-          document.body.appendChild(ifr);
-          form.setAttribute('action', action);
-          form.setAttribute('target', 'lr_fb');
-          HTMLFormElement.prototype.submit.call(form);
-          try { sessionStorage.setItem('lr_sent', Date.now()); } catch (err) {}
-          if (okEl) { okEl.textContent = 'Got it. We will review your menu and reach out to confirm every detail before anything goes live.'; okEl.classList.add('show'); }
-          if (btn) btn.textContent = 'Sent';
-        } catch (err2) {
-          if (btn) { btn.disabled = false; btn.textContent = 'Submit restaurant info'; }
-          fail('Something went wrong. Please email info@eyetoad.com directly and we will take it from there.');
-        }
+        if (btn) { btn.disabled = false; btn.textContent = 'Submit restaurant info'; }
+        fail('That did not go through. Please call 1-800-481-8638.');
       });
     });
   }
@@ -1971,12 +1961,16 @@ if (typeof window !== 'undefined') { window.LR_RESTAURANTS = restaurants; }
         {"@type":"Question","name":"How do I send you my menu?","acceptedAnswer":{"@type":"Answer","text":"Paste it straight into the form on this page, in the large menu box. Copy and paste from a document is fine. Include your sections, items, and prices, and we take it from there."}},
         {"@type":"Question","name":"What kinds of places is this for?","acceptedAnswer":{"@type":"Answer","text":"Restaurants, bars, cafés, food trucks, beach grills — anywhere with a menu and guests holding phones. If you serve food or drinks, an NFC menu fits."}},
         {"@type":"Question","name":"Can I add photos of my dishes?","acceptedAnswer":{"@type":"Answer","text":"Yes. Send us image links along with your menu and we can add them. Clear, well-lit photos help guests decide, and we place them so the page still loads fast."}},
+        {"@type":"Question","name":"Does the NFC card need batteries or charging?","acceptedAnswer":{"@type":"Answer","text":"No. NFC tags are passive: they have no battery and draw the tiny amount of power they need from the guest’s phone when it is held close. As long as the card is not cracked or stuck to a metal surface that blocks the signal, it keeps working."}},
+        {"@type":"Question","name":"Should I link my menu from my Google Business Profile?","acceptedAnswer":{"@type":"Answer","text":"Yes. Google Business Profile has a menu link field for restaurants, and putting your Link Restaurants menu address there means diners who find you on Google or Maps reach the same up-to-date menu your guests open at the table. Use the same link on your website and social profiles so every path leads to one menu."}},
+        {"@type":"Question","name":"Can my menu show allergens and dietary information?","acceptedAnswer":{"@type":"Answer","text":"Yes. Dishes can be labelled in plain text, for example vegetarian, vegan, gluten-free or contains nuts, which guests can read and search engines can index. Send us the labels exactly as your kitchen confirms them, and keep encouraging guests with allergies to tell staff, since a menu label is never a substitute for that conversation."}},
         {"@type":"Question","name":"Is there a contract or can I cancel?","acceptedAnswer":{"@type":"Answer","text":"Hosting is month to month. You can cancel any time. We confirm the details with you directly when we set things up."}},
-        {"@type":"Question","name":"How do I get started?","acceptedAnswer":{"@type":"Answer","text":"Fill out the form on this page with your details and your full menu. We reach out to confirm everything, build your page, and send your NFC card. You can also email info@eyetoad.com."}}
+        {"@type":"Question","name":"How do I get started?","acceptedAnswer":{"@type":"Answer","text":"Fill out the form on this page with your details and your full menu. We reach out to confirm everything, build your page, and send your NFC card. You can also call 1-800-481-8638."}}
       ]
     }
   ]
 }
 </script>
+<script>document.querySelectorAll("a.eml").forEach(function(a){var e=atob(a.dataset.a)+String.fromCharCode(64)+atob(a.dataset.b);a.href="mailto:"+e;if(a.hasAttribute("data-show"))a.textContent=e;});</script>
 </body>
 </html>

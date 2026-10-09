@@ -1,0 +1,19 @@
+# Link Restaurants
+
+> Done-for-you NFC and QR digital menu service that also optimizes the menu for search and AI discovery. Restaurant owners submit their menu once; Link Restaurants builds a fast, mobile HTML menu page with real indexable text, structured data (Restaurant, Menu, MenuSection, MenuItem) and a clean URL, then programs an NFC card or sticker that opens it in one tap. No app, no PDF, no image menu.
+
+- Site: https://linkrestaurants.com/
+- Menu directory search (deep links): https://linkrestaurants.com/?q=SEARCH_TERM
+- Pricing: $99 one-time setup (includes a programmed NFC card); $25/month menu hosting; $100 per full menu update; small logo/image swaps quoted as needed.
+- Serves: restaurants, bars, cafés and food trucks worldwide; first locations in San Pedro, Belize.
+- Getting started: the submission form at https://linkrestaurants.com/#signup
+- Built and operated by Eye To Ad Media (Denver, CO) · 1-800-481-8638
+
+## Live menus
+
+- [Wayo's Beach Bar, San Pedro, Belize](https://linkrestaurants.com/wayos/)
+
+## Related
+
+- [Restaurant SEO guide](https://restaurantsseo.com/)
+- [Restaurant advertising](https://restaurantsadvertising.com/)
