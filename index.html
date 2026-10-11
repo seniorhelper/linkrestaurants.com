@@ -547,6 +547,22 @@ section{padding:78px 0}
 .nfc-buy .talk{margin-top:10px;font-size:15px;font-weight:600}
 .nfc-buy .talk a{color:var(--orange-deep)}
 @media (max-width:480px){.nfc-buy .pay-form .btn{width:100%}}
+/* trust row: BBB seal + secure checkout */
+.trust-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 18px;margin:22px auto 0;max-width:680px;text-align:center}
+.trust-seal{display:inline-block;flex:none;line-height:0;border-radius:10px}
+.trust-seal a{display:block;line-height:0;border:0}
+.trust-seal img{display:block;width:200px;height:65px;max-width:none;margin:0}
+.trust-dark .trust-seal{background:#fff;padding:6px 10px;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+.trust-row .trust-txt{flex:0 1 440px;min-width:200px}
+.trust-row .trust-txt p{margin:0;max-width:none;text-align:center;text-wrap:balance}
+.trust-row .trust-txt p.pay-secure{margin:0;font-size:14px;line-height:1.5}
+.trust-row .trust-txt .trust-cap{margin:4px 0 0;font-size:13px;line-height:1.45;color:var(--ink-faint)}
+.trust-dark .trust-txt .trust-cap{color:#c9c4da}
+.nfc-buy .trust-row{margin-top:16px}
+.nfc-buy .trust-row .trust-txt p.pay-secure{font-size:13.5px;color:var(--ink-soft)}
+.trust-foot{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin:0 0 22px}
+.footer-brand .trust-foot{margin:18px 0 0}
+.trust-foot .trust-cap{font-size:13px;line-height:1.45;color:var(--ink-faint);text-wrap:balance}
 </style>
 
 
@@ -955,7 +971,14 @@ section{padding:78px 0}
               <input type="hidden" name="LinkId" value="91a8af30-0a33-4b65-9ced-c646d3f48125">
               <button type="submit" class="btn">Buy now: $99</button>
             </form>
-            <p class="pay-secure">Secure checkout by Authorize.net. We never see your card number.</p>
+            <div class="trust-row">
+              <span class="trust-seal"><a href="https://www.bbb.org/us/co/denver/profile/advertising-agencies/search-converts-llc-1296-90228702/#sealclick" target="_blank" rel="nofollow noopener" aria-label="Search Converts LLC BBB Business Review (opens BBB profile)"><img src="https://seal-alaskaoregonwesternwashington.bbb.org/seals/blue-seal-200-65-bbb-90228702.png" width="200" height="65" alt="Search Converts LLC BBB Business Review" loading="lazy" decoding="async"></a></span>
+              <div class="trust-txt">
+                <p class="pay-secure">Secure checkout by Authorize.net. We never see your card number.</p>
+                <p class="trust-cap">BBB Accredited Business, listed as Search Converts LLC.</p>
+              </div>
+              <!-- authorize.net verified merchant seal goes here -->
+            </div>
             <p class="talk">Prefer to talk first? <a href="#signup">Book a free intro call</a> or call <a href="tel:+18004818638">1-800-481-8638</a>.</p>
           </div>
         </div>
@@ -1074,7 +1097,14 @@ section{padding:78px 0}
         </div>
       </div>
 
-      <p class="pay-secure reveal">Secure checkout by Authorize.net. We never see your card number.</p>
+      <div class="trust-row trust-dark reveal">
+        <span class="trust-seal"><a href="https://www.bbb.org/us/co/denver/profile/advertising-agencies/search-converts-llc-1296-90228702/#sealclick" target="_blank" rel="nofollow noopener" aria-label="Search Converts LLC BBB Business Review (opens BBB profile)"><img src="https://seal-alaskaoregonwesternwashington.bbb.org/seals/blue-seal-200-65-bbb-90228702.png" width="200" height="65" alt="Search Converts LLC BBB Business Review" loading="lazy" decoding="async"></a></span>
+        <div class="trust-txt">
+          <p class="pay-secure">Secure checkout by Authorize.net. We never see your card number.</p>
+          <p class="trust-cap">BBB Accredited Business, listed as Search Converts LLC.</p>
+        </div>
+        <!-- authorize.net verified merchant seal goes here -->
+      </div>
 
       <p class="claim-line reveal">Already listed in one of our restaurant guides? <a href="/claim/">Claim your restaurant</a> from $9.99 per month or $99 per year.</p>
 
@@ -1352,6 +1382,7 @@ section{padding:78px 0}
       <div class="footer-brand">
         <img src="/images/w/link-restaurants-logo-440.png" alt="Link Restaurants" width="220" height="113" loading="lazy" decoding="async">
         <p>Done-for-you NFC and QR digital menus, optimized to be found. Your customers tap a card, your menu opens — and search engines and AI assistants can finally read what you serve.</p>
+      <div class="trust-foot"><span class="trust-seal"><a href="https://www.bbb.org/us/co/denver/profile/advertising-agencies/search-converts-llc-1296-90228702/#sealclick" target="_blank" rel="nofollow noopener" aria-label="Search Converts LLC BBB Business Review (opens BBB profile)"><img src="https://seal-alaskaoregonwesternwashington.bbb.org/seals/blue-seal-200-65-bbb-90228702.png" width="200" height="65" alt="Search Converts LLC BBB Business Review" loading="lazy" decoding="async"></a></span><span class="trust-cap">BBB Accredited Business, listed as Search Converts LLC.</span></div>
       </div>
       <div class="footer-col">
         <h4>Explore</h4>
