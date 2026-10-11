@@ -525,6 +525,28 @@ section{padding:78px 0}
 .call-alt{margin-top:10px;font-weight:600}
 .call-alt a{color:var(--orange-deep)}
 @media (max-width:480px){.hero-cta .btn{width:100%;justify-content:center}}
+/* ---------- buy buttons (Authorize.net Simple Checkout) ---------- */
+.pay-form{margin:20px 0 0}
+.pay-form .btn{width:100%;white-space:normal;text-align:center}
+.price-card.feature .pay-form .btn{background:#fff;color:var(--orange-deep);box-shadow:0 6px 16px rgba(20,22,25,.18)}
+.price-card.feature .pay-form .btn:hover{background:#fff6f0}
+.pay-terms{margin-top:10px;font-size:13.5px;color:#c9c4da}
+.price-card.feature .pay-terms{color:#fff}
+.pay-note{margin-top:8px;font-size:12.5px;line-height:1.5;color:#a9a3bd}
+.pay-secure{text-align:center;max-width:620px;margin:22px auto 0;font-size:14px;color:#c9c4da}
+.pay-talk{text-align:center;margin:0 0 14px;font-weight:600;color:#fff}
+.claim-line{text-align:center;max-width:620px;margin:18px auto 0;font-size:15px;color:#c9c4da}
+.claim-line a{color:#ffb587;font-weight:600;text-decoration:underline}
+.nfc-buy{margin-top:26px;padding:22px;border:1px solid var(--line);border-radius:var(--radius);background:#fff}
+.nfc-buy .pay-form{margin:0}
+.nfc-buy .pay-form .btn{width:auto}
+.nfc-buy .pay-terms,.nfc-buy .pay-secure{color:var(--ink-soft);text-align:left;margin-left:0}
+.nfc-buy .pay-terms{margin:0 0 12px;font-size:15px}
+.nfc-buy .pay-terms strong{color:var(--ink)}
+.nfc-buy .pay-secure{margin-top:12px;font-size:13.5px}
+.nfc-buy .talk{margin-top:10px;font-size:15px;font-weight:600}
+.nfc-buy .talk a{color:var(--orange-deep)}
+@media (max-width:480px){.nfc-buy .pay-form .btn{width:100%}}
 </style>
 
 
@@ -927,6 +949,15 @@ section{padding:78px 0}
             <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Card never expires — only the menu behind it changes</li>
             <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> QR backup for phones without NFC</li>
           </ul>
+          <div class="nfc-buy">
+            <p class="pay-terms"><strong>NFC menu setup: $99 one-time.</strong> Includes your optimized menu page and a programmed NFC card.</p>
+            <form class="pay-form" method="post" action="https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx">
+              <input type="hidden" name="LinkId" value="91a8af30-0a33-4b65-9ced-c646d3f48125">
+              <button type="submit" class="btn">Buy now: $99</button>
+            </form>
+            <p class="pay-secure">Secure checkout by Authorize.net. We never see your card number.</p>
+            <p class="talk">Prefer to talk first? <a href="#signup">Book a free intro call</a> or call <a href="tel:+18004818638">1-800-481-8638</a>.</p>
+          </div>
         </div>
         <div class="split-media reveal">
           <picture><source type="image/avif" srcset="/images/w/link-restaurants-nfc-table-menu-480.avif 480w, /images/w/link-restaurants-nfc-table-menu-800.avif 800w, /images/w/link-restaurants-nfc-table-menu-1100.avif 1100w" sizes="(max-width: 860px) calc(100vw - 44px), 520px"><source type="image/webp" srcset="/images/w/link-restaurants-nfc-table-menu-480.webp 480w, /images/w/link-restaurants-nfc-table-menu-800.webp 800w, /images/w/link-restaurants-nfc-table-menu-1100.webp 1100w" sizes="(max-width: 860px) calc(100vw - 44px), 520px"><img src="/images/w/link-restaurants-nfc-table-menu-800.webp" width="1100" height="1375" loading="lazy" decoding="async" alt="Empty restaurant tables set with soy sauce bottles and napkins, waiting for evening guests"></picture>
@@ -1014,22 +1045,43 @@ section{padding:78px 0}
           <div class="plabel">Get started</div>
           <div class="amt">$99<small> once</small></div>
           <div class="pdesc">Setup, your optimized menu page, and a programmed NFC card — ready to tap out of the box.</div>
+          <form class="pay-form" method="post" action="https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx">
+            <input type="hidden" name="LinkId" value="91a8af30-0a33-4b65-9ced-c646d3f48125">
+            <button type="submit" class="btn btn-block">Buy now: $99</button>
+          </form>
+          <p class="pay-terms">NFC menu setup &middot; $99 one-time</p>
         </div>
         <div class="price-card reveal">
           <div class="plabel">Hosting</div>
           <div class="amt">$25<small> / month</small></div>
           <div class="pdesc">Keeps your menu page live, fast, and online. Cancel any time.</div>
+          <form class="pay-form" method="post" action="https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx">
+            <input type="hidden" name="LinkId" value="084655e0-4eba-4dc6-8180-c22dc4f3a392">
+            <button type="submit" class="btn btn-block">Buy now: $25</button>
+          </form>
+          <p class="pay-terms">Menu hosting &middot; $25 per month, billed monthly</p>
+          <p class="pay-note">First month charged today. We&rsquo;ll confirm your ongoing monthly billing during your intro call.</p>
         </div>
         <div class="price-card reveal">
           <div class="plabel">Menu update</div>
           <div class="amt">$100<small> / update</small></div>
           <div class="pdesc">A full menu rewrite — new sections, new prices, new dishes. Simple logo or image swaps are quoted as needed.</div>
+          <form class="pay-form" method="post" action="https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx">
+            <input type="hidden" name="LinkId" value="5279fb56-6f96-4910-a37e-c122a0ed36a8">
+            <button type="submit" class="btn btn-block">Buy now: $100</button>
+          </form>
+          <p class="pay-terms">Full menu update &middot; $100 one-time</p>
         </div>
       </div>
+
+      <p class="pay-secure reveal">Secure checkout by Authorize.net. We never see your card number.</p>
+
+      <p class="claim-line reveal">Already listed in one of our restaurant guides? <a href="/claim/">Claim your restaurant</a> from $9.99 per month or $99 per year.</p>
 
       <p class="owner-note reveal">Search and AI optimization is included in every build, not sold as an upgrade. We reach out to confirm every detail before your menu goes live and before we program your NFC card. Nothing publishes until you approve it.</p>
 
       <div style="text-align:center;margin-top:30px" class="reveal">
+        <p class="pay-talk">Prefer to talk first?</p>
         <a class="btn btn-lg" href="#signup">Book a free intro call
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
@@ -1308,6 +1360,7 @@ section{padding:78px 0}
         <a href="#optimize">What we optimize</a>
         <a href="#menu-check">Menu visibility check</a>
         <a href="#owner">Pricing</a>
+        <a href="/claim/">Claim your restaurant</a>
         <a href="#faq">FAQ</a>
       </div>
       <div class="footer-col">

@@ -13,4 +13,11 @@
     </image:image>
   </url>
 
+  <url>
+    <loc>https://linkrestaurants.com/claim/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>

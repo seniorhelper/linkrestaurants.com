@@ -23,6 +23,21 @@
   .ok .steps-mini li{margin-bottom:12px;color:var(--ink-soft)}
   .ok .steps-mini li:last-child{margin-bottom:0}
   .ok .steps-mini strong{color:var(--ink)}
+  .ok .next{text-align:left;margin:30px 0 0;padding:0}
+  .ok .next h2{font-size:clamp(22px,4vw,28px);margin-bottom:12px;text-align:center}
+  .ok .next ul{list-style:none;padding:0;margin:0}
+  .ok .next li{margin-bottom:10px;color:var(--ink-soft);font-size:16px}
+  .ok .next strong{color:var(--ink)}
+  .ok .upsell{background:var(--orange-tint);border:1px solid #fbdcc9;border-radius:var(--radius);padding:24px;margin:26px 0;text-align:center}
+  .ok .upsell .opt{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--orange-deep);margin-bottom:8px}
+  .ok .upsell h2{font-size:22px;margin-bottom:8px}
+  .ok .upsell p{font-size:15.5px;margin-bottom:10px}
+  .ok .upsell .pay-form{margin:14px 0 0}
+  .ok .upsell .btn{white-space:normal;text-align:center;max-width:100%}
+  .ok .upsell .pay-terms{margin:10px 0 0;font-size:14px;color:var(--ink-soft)}
+  .ok .upsell .pay-secure{margin:8px 0 0;font-size:13px;color:var(--ink-faint)}
+  .ok .intro-cta{margin:4px 0 22px}
+  .ok .intro-cta .btn{white-space:normal;text-align:center;max-width:100%}
 </style>
 </head>
 <body>
@@ -49,6 +64,28 @@
       <li><strong>2. We show you how we can help.</strong> Ideas to help you surpass those goals and reach more of the right customers.</li>
       <li><strong>3. You decide.</strong> No obligation. If it is a fit, we build your page and program your NFC card.</li>
     </ol>
+    <section class="next" aria-labelledby="next-h">
+      <h2 id="next-h">What happens next</h2>
+      <ul>
+        <li><strong>We contact you.</strong> If you booked a call, we reach out at the time you chose. If you paid, we reach out to confirm your order (for a claimed listing, to verify you own or manage the restaurant).</li>
+        <li><strong>We set it up.</strong> We build your menu page or listing and confirm the details with you before anything goes live.</li>
+      </ul>
+    </section>
+
+    <div class="upsell">
+      <div class="opt">Optional add-on</div>
+      <h2>AI Ready setup</h2>
+      <p>A one-time setup from our team to help AI assistants and search read your restaurant&rsquo;s details clearly. Completely optional; we&rsquo;ll go over exactly what&rsquo;s included on your intro call.</p>
+      <form class="pay-form" method="post" action="https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx">
+        <input type="hidden" name="LinkId" value="701b5c67-43ac-41b8-ac47-02451e71ec60">
+        <button type="submit" class="btn">Add AI Ready setup ($99)</button>
+      </form>
+      <p class="pay-terms">$99 one-time</p>
+      <p class="pay-secure">Secure checkout by Authorize.net. We never see your card number.</p>
+    </div>
+
+    <div class="intro-cta"><a class="btn btn-lg" href="/#signup">Book your free intro call</a></div>
+
     <p>Questions in the meantime? Call <a href="tel:+18004818638" style="color:var(--orange-deep);font-weight:600">1-800-481-8638</a> or email <a class="eml" data-a="aW5mbw==" data-b="ZXlldG9hZC5jb20=" data-show href="/#signup" style="color:var(--orange-deep);font-weight:600">email us</a>.</p>
     <div style="margin-top:26px"><a class="btn" href="/">Back to Link Restaurants</a></div>
   </div>
