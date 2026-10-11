@@ -3,27 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Turbocharge Your Menu | NFC Digital Menus Built to Be Found | Link Restaurants</title>
-<meta name="description" content="Your menu should do more than list food. Link Restaurants turns it into an NFC tap-to-open web page optimized to be found on Google and cited by AI search — no app, no PDF, no reprinting.">
+<title>NFC Digital Menus Built to Be Found | Link Restaurants</title>
+<meta name="description" content="Turn your menu into a tap-to-open NFC web page that Google and AI assistants can read. No app, no PDF, no reprinting. Done for you from $99 setup.">
 <link rel="canonical" href="https://linkrestaurants.com/">
 
 <!-- favicon -->
-<link rel="icon" type="image/png" href="/images/find-restaurants-favicon.png">
-<link rel="apple-touch-icon" href="/images/find-restaurants-favicon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/w/link-restaurants-favicon-32.png">
+<link rel="apple-touch-icon" href="/images/w/link-restaurants-favicon-180.png">
 
 <!-- social -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Turbocharge Your Menu | NFC Digital Menus Built to Be Found">
 <meta property="og:description" content="A printed menu lists your food. A Link Restaurants menu gets you found. Tap-to-open NFC menus, optimized for Google and AI search.">
 <meta property="og:url" content="https://linkrestaurants.com/">
-<meta property="og:image" content="https://linkrestaurants.com/images/restaurant-marketing-expert.png">
+<meta property="og:image" content="https://linkrestaurants.com/images/w/link-restaurants-turbocharge-menu-banner-1672.jpg">
 <meta property="og:image:width" content="1672">
 <meta property="og:image:height" content="941">
 <meta property="og:site_name" content="Link Restaurants">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Turbocharge Your Menu | NFC Digital Menus Built to Be Found">
 <meta name="twitter:description" content="A printed menu lists your food. A Link Restaurants menu gets you found. Tap to open, optimized for Google and AI search.">
-<meta name="twitter:image" content="https://linkrestaurants.com/images/restaurant-marketing-expert.png">
+<meta name="twitter:image" content="https://linkrestaurants.com/images/w/link-restaurants-turbocharge-menu-banner-1672.jpg">
 
 <!-- crawling -->
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -34,7 +34,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="/images/restaurant-marketing-expert.png" fetchpriority="high">
+<link rel="preload" as="image" type="image/avif" imagesrcset="/images/w/link-restaurants-turbocharge-menu-banner-800.avif 800w, /images/w/link-restaurants-turbocharge-menu-banner-1200.avif 1200w, /images/w/link-restaurants-turbocharge-menu-banner-1672.avif 1672w" imagesizes="(max-width: 1100px) calc(100vw - 44px), 1060px" fetchpriority="high">
 
 <style>
 /* ============================================================
@@ -140,7 +140,10 @@ h1,h2,h3,h4{
   content:"";position:absolute;inset:0;z-index:0;
   background:
     linear-gradient(180deg,rgba(255,255,255,.72),rgba(255,255,255,.86) 45%,rgba(255,255,255,.97)),
-    url('/images/find-restaurants-hero.jpg') center 35%/cover no-repeat;
+    url('/images/w/link-restaurants-patio-table-hero-900.webp') center 35%/cover no-repeat;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.72),rgba(255,255,255,.86) 45%,rgba(255,255,255,.97)),
+    image-set(url('/images/w/link-restaurants-patio-table-hero-1600.avif') type('image/avif'),url('/images/w/link-restaurants-patio-table-hero-1600.webp') type('image/webp')) center 35%/cover no-repeat;
 }
 .hero-inner{position:relative;z-index:1;max-width:820px;margin:0 auto;text-align:center}
 .eyebrow{
@@ -179,7 +182,7 @@ h1,h2,h3,h4{
 .hero-trust svg{color:var(--orange);flex:none}
 
 /* ---------- turbocharge banner ---------- */
-.turbo-band{position:relative;z-index:1;padding:0 0 8px}
+.turbo-band{position:relative;z-index:1;padding-top:0;padding-bottom:8px}
 .turbo-rule{
   display:flex;align-items:center;gap:16px;max-width:900px;margin:44px auto 20px;
   font-family:'Space Mono',monospace;font-size:12.5px;letter-spacing:.14em;
@@ -238,7 +241,7 @@ h1,h2,h3,h4{
 .mid-arrow svg{transform:rotate(90deg)}
 
 /* ---------- optimization grid ---------- */
-.opt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.opt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:20px}
 .opt-card{
   background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;
   box-shadow:var(--shadow);transition:transform .2s var(--ease),border-color .2s;
@@ -301,7 +304,7 @@ section{padding:78px 0}
 
 /* ---------- directory ---------- */
 #directory{padding-top:0;margin-top:6px;position:relative;z-index:2}
-.dir-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:22px}
+.dir-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(310px,100%),1fr));gap:22px}
 .rcard{
   background:#fff;border:1px solid var(--line);border-radius:var(--radius);
   padding:24px;display:flex;flex-direction:column;gap:12px;
@@ -328,7 +331,7 @@ section{padding:78px 0}
 .dir-noresult{grid-column:1/-1;text-align:center;padding:40px;color:var(--ink-faint);font-family:'Space Mono',monospace}
 
 /* ---------- how it works ---------- */
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;counter-reset:step}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:24px;counter-reset:step}
 .step{position:relative;padding:28px;background:#fff;border:1px solid var(--line);border-radius:var(--radius)}
 .step .num{
   font-family:'Space Mono',monospace;font-size:13px;color:var(--orange-deep);
@@ -347,6 +350,7 @@ section{padding:78px 0}
 .split.rev .split-media{order:-1}
 .split-media{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);position:relative}
 .split-media img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+.split-media picture,.turbo-banner picture{display:block;height:100%}
 .split-body h2{font-size:clamp(26px,3.6vw,38px);margin-bottom:16px}
 .split-body p{color:var(--ink-soft);margin-bottom:16px;font-size:17px}
 .checklist{list-style:none;display:flex;flex-direction:column;gap:12px;margin:22px 0}
@@ -388,7 +392,7 @@ section{padding:78px 0}
 #owner .section-head h2,#owner h3{color:#fff}
 #owner .section-head .tag{color:#ffb587}
 #owner .section-head p{color:#c9c4da}
-.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;max-width:900px;margin:0 auto}
+.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:20px;max-width:900px;margin:0 auto}
 .price-card{
   background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);
   border-radius:var(--radius);padding:28px;text-align:center;
@@ -491,6 +495,9 @@ section{padding:78px 0}
   .footer-inner{grid-template-columns:1fr 1fr}
   .footer-brand{grid-column:1/-1}
 }
+@media (max-width:420px){
+  .btn-lg{padding:15px 18px;font-size:15px;white-space:normal;max-width:100%;text-align:center}
+}
 @media (max-width:680px){
   body{font-size:16px}
   .nav{
@@ -540,7 +547,7 @@ section{padding:78px 0}
      Service is available to restaurants, bars, cafés, and food
      trucks worldwide; first locations launching in San Pedro,
      Belize. Built and operated by Eye To Ad Media.
-     Content last reviewed: August 2026.
+     Content last reviewed: October 2026.
      ============================================================ -->
 </head>
 <body>
@@ -549,7 +556,7 @@ section{padding:78px 0}
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="brand" href="/" aria-label="Link Restaurants home">
-      <img src="/images/find-restaurant-logo.png" alt="Link Restaurants" width="280" height="56">
+      <img src="/images/w/link-restaurants-logo-440.png" alt="Link Restaurants" width="109" height="56">
     </a>
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav">
       <span></span><span></span><span></span>
@@ -596,9 +603,7 @@ section{padding:78px 0}
     <div class="wrap turbo-band">
       <p class="turbo-rule">Run a restaurant? Read this part</p>
       <a class="turbo-banner" href="#turbocharge" aria-label="Turbocharge your menu — tabletop NFC menus fully optimized to come up in search">
-        <img src="/images/restaurant-marketing-expert.png"
-             alt="Turbocharge your menu — convenient tabletop NFC scanning plus full optimization to come up in search. A Link Restaurants NFC table tent sits beside a phone showing a mobile menu with prices, while a laptop shows the restaurant ranking in Google for best burger restaurant near me."
-             width="1672" height="941" loading="eager" fetchpriority="high" decoding="async">
+        <picture><source type="image/avif" srcset="/images/w/link-restaurants-turbocharge-menu-banner-800.avif 800w, /images/w/link-restaurants-turbocharge-menu-banner-1200.avif 1200w, /images/w/link-restaurants-turbocharge-menu-banner-1672.avif 1672w" sizes="(max-width: 1100px) calc(100vw - 44px), 1060px"><source type="image/webp" srcset="/images/w/link-restaurants-turbocharge-menu-banner-800.webp 800w, /images/w/link-restaurants-turbocharge-menu-banner-1200.webp 1200w, /images/w/link-restaurants-turbocharge-menu-banner-1672.webp 1672w" sizes="(max-width: 1100px) calc(100vw - 44px), 1060px"><img src="/images/w/link-restaurants-turbocharge-menu-banner-1200.webp" width="1672" height="941" fetchpriority="high" decoding="async" alt="Turbocharge your menu — convenient tabletop NFC scanning plus full optimization to come up in search. A Link Restaurants NFC table tent sits beside a phone showing a mobile menu with prices, while a laptop shows the restaurant ranking in Google for best burger restaurant near me."></picture>
       </a>
       <p class="turbo-cap"><strong>A printed menu lists your food. A Link Restaurants menu also gets you found.</strong> Guests tap a card and your menu opens instantly — and because every dish is real, readable text, Google and AI assistants can finally read what you serve.</p>
       <div class="turbo-cta">
@@ -906,7 +911,7 @@ section{padding:78px 0}
           </ul>
         </div>
         <div class="split-media reveal">
-          <img src="/images/restaurants-menus.jpg" alt="A restaurant table set for a meal, ready for guests" loading="lazy" decoding="async">
+          <picture><source type="image/avif" srcset="/images/w/link-restaurants-menu-ravioli-patio-480.avif 480w, /images/w/link-restaurants-menu-ravioli-patio-800.avif 800w, /images/w/link-restaurants-menu-ravioli-patio-1200.avif 1200w" sizes="(max-width: 860px) calc(100vw - 44px), 520px"><source type="image/webp" srcset="/images/w/link-restaurants-menu-ravioli-patio-480.webp 480w, /images/w/link-restaurants-menu-ravioli-patio-800.webp 800w, /images/w/link-restaurants-menu-ravioli-patio-1200.webp 1200w" sizes="(max-width: 860px) calc(100vw - 44px), 520px"><img src="/images/w/link-restaurants-menu-ravioli-patio-800.webp" width="1200" height="1500" loading="lazy" decoding="async" style="object-position:50% 72%" alt="A plate of ravioli in tomato sauce with a glass of white wine on a sunny restaurant patio table"></picture>
         </div>
       </div>
     </div>
@@ -928,7 +933,7 @@ section{padding:78px 0}
           </ul>
         </div>
         <div class="split-media reveal">
-          <img src="/images/find-best-restaurants.jpg" alt="A diner reaching for a fresh plate of food at a restaurant" loading="lazy" decoding="async">
+          <picture><source type="image/avif" srcset="/images/w/link-restaurants-nfc-table-menu-480.avif 480w, /images/w/link-restaurants-nfc-table-menu-800.avif 800w, /images/w/link-restaurants-nfc-table-menu-1100.avif 1100w" sizes="(max-width: 860px) calc(100vw - 44px), 520px"><source type="image/webp" srcset="/images/w/link-restaurants-nfc-table-menu-480.webp 480w, /images/w/link-restaurants-nfc-table-menu-800.webp 800w, /images/w/link-restaurants-nfc-table-menu-1100.webp 1100w" sizes="(max-width: 860px) calc(100vw - 44px), 520px"><img src="/images/w/link-restaurants-nfc-table-menu-800.webp" width="1100" height="1375" loading="lazy" decoding="async" alt="Empty restaurant tables set with soy sauce bottles and napkins, waiting for evening guests"></picture>
         </div>
       </div>
     </div>
@@ -951,7 +956,7 @@ section{padding:78px 0}
           </ul>
         </div>
         <div class="split-media reveal">
-          <img src="/images/places-to-eat.jpg" alt="Diners choosing where to eat, looking over plates of food at a restaurant table" loading="lazy" decoding="async">
+          <picture><source type="image/avif" srcset="/images/w/link-restaurants-digital-menu-dishes-480.avif 480w, /images/w/link-restaurants-digital-menu-dishes-800.avif 800w, /images/w/link-restaurants-digital-menu-dishes-1200.avif 1200w" sizes="(max-width: 860px) calc(100vw - 44px), 520px"><source type="image/webp" srcset="/images/w/link-restaurants-digital-menu-dishes-480.webp 480w, /images/w/link-restaurants-digital-menu-dishes-800.webp 800w, /images/w/link-restaurants-digital-menu-dishes-1200.webp 1200w" sizes="(max-width: 860px) calc(100vw - 44px), 520px"><img src="/images/w/link-restaurants-digital-menu-dishes-800.webp" width="1200" height="900" loading="lazy" decoding="async" alt="A restaurant table with a burger, salad, schnitzel and fish dishes beside colorful chairs"></picture>
         </div>
       </div>
     </div>
@@ -1374,7 +1379,7 @@ section{padding:78px 0}
   <div class="wrap">
     <div class="footer-inner">
       <div class="footer-brand">
-        <img src="/images/find-restaurant-logo.png" alt="Link Restaurants" width="220" height="44" loading="lazy" decoding="async">
+        <img src="/images/w/link-restaurants-logo-440.png" alt="Link Restaurants" width="220" height="113" loading="lazy" decoding="async">
         <p>Done-for-you NFC and QR digital menus, optimized to be found. Your customers tap a card, your menu opens — and search engines and AI assistants can finally read what you serve.</p>
       </div>
       <div class="footer-col">
@@ -1819,7 +1824,7 @@ if (typeof window !== 'undefined') { window.LR_RESTAURANTS = restaurants; }
       "logo": {
         "@type": "ImageObject",
         "@id": "https://linkrestaurants.com/#logo",
-        "url": "https://linkrestaurants.com/images/find-restaurant-logo.png",
+        "url": "https://linkrestaurants.com/images/w/link-restaurants-logo-440.png",
         "caption": "Link Restaurants"
       },
       "image": { "@id": "https://linkrestaurants.com/#logo" },
@@ -1867,7 +1872,7 @@ if (typeof window !== 'undefined') { window.LR_RESTAURANTS = restaurants; }
       "publisher": { "@id": "https://linkrestaurants.com/#org" },
       "primaryImageOfPage": {
         "@type": "ImageObject",
-        "url": "https://linkrestaurants.com/images/restaurant-marketing-expert.png",
+        "url": "https://linkrestaurants.com/images/w/link-restaurants-turbocharge-menu-banner-1672.jpg",
         "width": 1672,
         "height": 941,
         "caption": "Turbocharge your menu — tabletop NFC scanning plus optimization to come up in search"

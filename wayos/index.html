@@ -3,25 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Wayo's Beach Bar Menu | San Pedro, Belize | Link Restaurants</title>
-<meta name="description" content="The full menu for Wayo's Beach Bar — a beachfront bar &amp; grill on the water in San Pedro, Ambergris Caye, Belize. Ceviche, fresh fish, sliders, cocktails and live music. Tap to view, tap to call.">
-<link rel="canonical" href="https://www.linkrestaurants.com/wayos/">
+<title>Wayo's Beach Bar Menu, San Pedro Belize | Link Restaurants</title>
+<meta name="description" content="Full menu for Wayo's Beach Bar, a bar &amp; grill on the water in San Pedro, Ambergris Caye, Belize: ceviche, fresh fish, sliders, cocktails. Tap to call.">
+<link rel="canonical" href="https://linkrestaurants.com/wayos/">
 
 <!-- favicon -->
-<link rel="icon" type="image/png" href="/images/find-restaurants-favicon.png">
-<link rel="apple-touch-icon" href="/images/find-restaurants-favicon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/w/link-restaurants-favicon-32.png">
+<link rel="apple-touch-icon" href="/images/w/link-restaurants-favicon-180.png">
 
 <!-- social -->
 <meta property="og:type" content="restaurant.menu">
 <meta property="og:title" content="Wayo's Beach Bar Menu | San Pedro, Belize">
 <meta property="og:description" content="Beachfront bar &amp; grill on the water in San Pedro, Belize. See the full menu — ceviche, fresh fish, sliders, cocktails, live music.">
-<meta property="og:url" content="https://www.linkrestaurants.com/wayos/">
-<meta property="og:image" content="https://www.linkrestaurants.com/wayos/images/wayos-beach-bar-san-pedro.jpg">
+<meta property="og:url" content="https://linkrestaurants.com/wayos/">
 <meta property="og:site_name" content="Link Restaurants">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Wayo's Beach Bar Menu | San Pedro, Belize">
 <meta name="twitter:description" content="Beachfront bar &amp; grill on the water in San Pedro, Belize. Full menu, one tap.">
-<meta name="twitter:image" content="https://www.linkrestaurants.com/wayos/images/wayos-beach-bar-san-pedro.jpg">
 
 <!-- crawlers + AI answer engines welcome -->
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
@@ -45,8 +43,8 @@
      Belize, at 99 Boca del Rio Drive. It is a full bar and grill
      known for happy-hour food, great cocktails, and live music,
      with seating out over the sea. Phone: +501-226-2035.
-     Typical spend: BZ$20-40 per person. Rated 4.7 stars (544+
-     Google reviews). Opens daily around 11am.
+     Typical spend: BZ$20-40 per person. Opens daily around 11am
+     (confirm current hours with the bar).
      Cuisine: Belizean, seafood, bar & grill, Caribbean.
      Signature dishes: ceviche (conch, shrimp, combo), fresh fish
      filet of the day, Wayo's curry, sliders, coconut shrimp,
@@ -63,11 +61,10 @@
   "@graph": [
     {
       "@type": "Restaurant",
-      "@id": "https://www.linkrestaurants.com/wayos/#restaurant",
+      "@id": "https://linkrestaurants.com/wayos/#restaurant",
       "name": "Wayo's Beach Bar",
       "alternateName": "Wayo's Bar",
-      "url": "https://www.linkrestaurants.com/wayos/",
-      "image": "https://www.linkrestaurants.com/wayos/images/wayos-beach-bar-san-pedro.jpg",
+      "url": "https://linkrestaurants.com/wayos/",
       "telephone": "+501-226-2035",
       "priceRange": "BZ$20–40",
       "servesCuisine": ["Belizean", "Seafood", "Bar & Grill", "Caribbean"],
@@ -86,18 +83,17 @@
           "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
           "opens": "11:00" }
       ],
-      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.7", "reviewCount": "544" },
       "amenityFeature": [
         { "@type": "LocationFeatureSpecification", "name": "Live music", "value": true },
         { "@type": "LocationFeatureSpecification", "name": "Great cocktails", "value": true },
         { "@type": "LocationFeatureSpecification", "name": "Happy-hour food", "value": true },
         { "@type": "LocationFeatureSpecification", "name": "Waterfront seating", "value": true }
       ],
-      "hasMenu": { "@id": "https://www.linkrestaurants.com/wayos/#menu" }
+      "hasMenu": { "@id": "https://linkrestaurants.com/wayos/#menu" }
     },
     {
       "@type": "Menu",
-      "@id": "https://www.linkrestaurants.com/wayos/#menu",
+      "@id": "https://linkrestaurants.com/wayos/#menu",
       "name": "Wayo's Beach Bar Menu",
       "inLanguage": "en",
       "hasMenuSection": [
@@ -258,8 +254,8 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque','Inter',sans-serif;line-height:1.0
 .hero::before{
   content:"";position:absolute;inset:0;z-index:0;
   background:
-    linear-gradient(180deg,rgba(10,82,87,.62),rgba(10,82,87,.78) 55%,rgba(10,40,44,.92)),
-    url('images/wayos-beach-bar-san-pedro.jpg') center 42%/cover no-repeat;
+    radial-gradient(120% 80% at 50% 0%,rgba(255,255,255,.14),transparent 60%),
+    linear-gradient(180deg,#0f7a80 0%,#0a5257 55%,#0a282c 100%);
 }
 .hero-inner{position:relative;z-index:1;text-align:center;max-width:760px;margin:0 auto}
 .hero .eyebrow{
@@ -278,6 +274,8 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque','Inter',sans-serif;line-height:1.0
   color:#fff;padding:8px 14px;border-radius:999px;backdrop-filter:blur(4px);
 }
 .chip .star{color:#ffcf4d}
+a.chip{text-decoration:none}
+a.chip:hover{background:rgba(255,255,255,.26)}
 .chip svg{flex:none;color:#ffd9c4}
 .hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 
@@ -314,7 +312,7 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque','Inter',sans-serif;line-height:1.0
 
 /* ---------- info strip ---------- */
 .info-strip{background:var(--sea-tint);border-bottom:1px solid #d5ebe9}
-.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:2px;padding:0}
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(210px,100%),1fr));gap:2px;padding:0}
 .info-item{display:flex;align-items:flex-start;gap:12px;padding:20px 22px}
 .info-item svg{flex:none;color:var(--sea);margin-top:2px}
 .info-item .k{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--sea-deep);margin-bottom:3px}
@@ -456,7 +454,7 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque','Inter',sans-serif;line-height:1.0
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
       All menus
     </a>
-    <span class="lr-powered">Menu by <a href="https://www.linkrestaurants.com/">Link Restaurants</a></span>
+    <span class="lr-powered">Menu by <a href="https://linkrestaurants.com/">Link Restaurants</a></span>
   </div>
 </div>
 
@@ -470,7 +468,7 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque','Inter',sans-serif;line-height:1.0
     <h1>Wayo's Beach Bar</h1>
     <p class="tag">Toes in the sand, drink in hand. A full bar &amp; grill right on the water &mdash; fresh seafood, cold cocktails and live music.</p>
     <div class="hero-meta">
-      <span class="chip"><span class="star">★</span> 4.7 · 544 reviews</span>
+      <a class="chip" href="https://www.google.com/maps/search/?api=1&amp;query=Wayo%27s+Beach+Bar+San+Pedro+Belize" target="_blank" rel="noopener">See current reviews on Google</a>
       <span class="chip">BZ$20&ndash;40 per person</span>
       <span class="chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> Open daily from 11am</span>
     </div>
@@ -854,7 +852,7 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque','Inter',sans-serif;line-height:1.0
   <div class="wrap">
     <div class="footer-top">
       <div class="footer-brand">
-        <img src="/images/find-restaurant-logo.png" alt="Link Restaurants" width="210">
+        <img src="/images/w/link-restaurants-logo-440.png" alt="Link Restaurants" width="210" height="108" loading="lazy" decoding="async">
         <p>This menu is hosted by Link Restaurants — done-for-you NFC &amp; QR digital menus. Tap a card, the menu opens. No app, no PDF.</p>
       </div>
       <div class="footer-links">
