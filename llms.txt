@@ -7,6 +7,7 @@
 - Pricing: $99 one-time setup (includes a programmed NFC card); $25/month menu hosting; $100 per full menu update; small logo/image swaps quoted as needed.
 - Serves: restaurants, bars, cafés and food trucks worldwide; first locations in San Pedro, Belize.
 - Getting started: the submission form at https://linkrestaurants.com/#signup
+- Free tool: Menu Visibility Check (six yes/no questions, runs in the browser): https://linkrestaurants.com/#menu-check
 - Built and operated by Eye To Ad Media (Denver, CO) · 1-800-481-8638
 
 ## Live menus
