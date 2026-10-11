@@ -13,15 +13,4 @@
     </image:image>
   </url>
 
-  <!-- ===== RESTAURANT MENUS =====
-       Add one <url> block per menu as it goes live.
-       Copy the Wayo's block below and change loc + lastmod + image. -->
-
-  <url>
-    <loc>https://linkrestaurants.com/wayos/</loc>
-    <lastmod>2026-10-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
 </urlset>
