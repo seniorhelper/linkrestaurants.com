@@ -563,6 +563,19 @@ section{padding:78px 0}
 .trust-foot{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin:0 0 22px}
 .footer-brand .trust-foot{margin:18px 0 0}
 .trust-foot .trust-cap{font-size:13px;line-height:1.45;color:var(--ink-faint);text-wrap:balance}
+
+details.oreq-wrap>summary{list-style:none;cursor:pointer}
+details.oreq-wrap>summary::-webkit-details-marker{display:none}
+form.oreq{display:grid;gap:10px;margin:12px 0 0;text-align:left;background:#fff;color:var(--ink,#141619);border-radius:14px;padding:16px;box-shadow:0 6px 16px rgba(20,22,25,.12)}
+form.oreq label{display:flex;flex-direction:column;gap:4px;font-weight:600;font-size:14px;color:var(--ink,#141619);min-width:0}
+form.oreq input{font:inherit;font-size:16px;border:1px solid #cfcbd9;border-radius:10px;padding:10px 12px;min-height:46px;width:100%;min-width:0;box-sizing:border-box;background:#fff;color:var(--ink,#141619)}
+form.oreq .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+form.oreq .onote{margin:0;font-size:13.5px;line-height:1.45;color:#4a4f5a}
+.pay-form form.oreq .btn,.price-card.feature .pay-form form.oreq .btn,.price-card.feature .pay-form form.oreq .btn:hover{width:100%;background:var(--orange-deep,#d4530f);color:#fff;box-shadow:none}
+form.oreq .ostat:empty{display:none}
+form.oreq .ostat,#order-sent .ostat{font-weight:600;font-size:14px;border-radius:10px;padding:10px 12px;margin:0}
+.ostat.ok{background:#e7f6ec;color:#14532d}.ostat.err{background:#fdeaea;color:#8a1020}.ostat.wait{background:#eef3fb;color:#1d2b4f}
+#order-sent .ostat{max-width:640px;margin:0 auto 18px;text-align:center}
 </style>
 
 
@@ -974,14 +987,11 @@ section{padding:78px 0}
           </ul>
           <div class="nfc-buy">
             <p class="pay-terms"><strong>NFC menu setup: $99 one-time.</strong> Includes your optimized menu page and a programmed NFC card.</p>
-            <form class="pay-form" method="post" action="https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx">
-              <input type="hidden" name="LinkId" value="91a8af30-0a33-4b65-9ced-c646d3f48125">
-              <button type="submit" class="btn">Buy now: $99</button>
-            </form>
+            <details class="pay-form oreq-wrap"><summary class="btn">Request this: $99</summary><form class="oreq" method="post" action="#" data-a="aW5mbw==" data-b="ZXlldG9hZC5jb20=" data-c=""><input type="hidden" name="_subject" value="Order request — NFC menu setup — linkrestaurants.com"><input type="hidden" name="_template" value="table"><input type="hidden" name="_next" value="https://linkrestaurants.com/?requested=1#order-sent"><input type="hidden" name="plan" value="NFC menu setup"><input type="hidden" name="price" value="$99 one-time"><div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div><label>Your name *<input type="text" name="name" required autocomplete="name"></label><label>Email *<input type="email" name="email" required autocomplete="email"></label><label>Phone *<input type="tel" name="phone" required autocomplete="tel" inputmode="tel"></label><label>Restaurant name *<input type="text" name="business" required autocomplete="organization"></label><label>Website (optional)<input type="url" name="website" autocomplete="url" placeholder="https://"></label><p class="onote">No card needed now. We&rsquo;ll email you a secure invoice within 1 business day.</p><button class="btn btn-block" type="submit">Send order request</button><div class="ostat" role="status" aria-live="polite"></div></form></details>
             <div class="trust-row">
               <span class="trust-seal"><a href="https://www.bbb.org/us/co/denver/profile/advertising-agencies/search-converts-llc-1296-90228702/#sealclick" target="_blank" rel="nofollow noopener" aria-label="Search Converts LLC BBB Business Review (opens BBB profile)"><img src="https://seal-alaskaoregonwesternwashington.bbb.org/seals/blue-seal-200-65-bbb-90228702.png" width="200" height="65" alt="Search Converts LLC BBB Business Review" loading="lazy" decoding="async"></a></span>
               <div class="trust-txt">
-                <p class="pay-secure">Secure checkout by Authorize.net. We never see your card number.</p>
+                <p class="pay-secure">No card needed now. We email you a secure Authorize.net invoice within 1 business day. We never see your card number.</p>
                 <p class="trust-cap">BBB Accredited Business, listed as Search Converts LLC.</p>
               </div>
               <div class="anet-seal" style="display:inline-block;flex:none;box-sizing:content-box;min-width:90px;min-height:72px;vertical-align:middle"><!-- (c) 2005, 2026. Authorize.Net is a registered trademark of CyberSource Corporation --> <div class="AuthorizeNetSeal"> <script type="text/javascript" language="javascript">var ANS_customer_id="2c88f8ff-07b2-4257-8917-e75f99310417";</script> <script type="text/javascript" language="javascript" src="https://verify.authorize.net:443/anetseal/seal.js" ></script> </div></div>
@@ -1070,36 +1080,28 @@ section{padding:78px 0}
         <p>No app. No PDF. No image menu. A fast, mobile-friendly menu page your customers open with one tap — optimized so search engines and AI assistants can read every dish. You paste your menu once; we build it, publish it, and hand you a card that opens it.</p>
       </div>
 
+      <div id="order-sent"></div>
       <div class="price-grid">
         <div class="price-card feature reveal">
           <div class="plabel">Get started</div>
           <div class="amt">$99<small> once</small></div>
           <div class="pdesc">Setup, your optimized menu page, and a programmed NFC card — ready to tap out of the box.</div>
-          <form class="pay-form" method="post" action="https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx">
-            <input type="hidden" name="LinkId" value="91a8af30-0a33-4b65-9ced-c646d3f48125">
-            <button type="submit" class="btn btn-block">Buy now: $99</button>
-          </form>
+          <details class="pay-form oreq-wrap"><summary class="btn btn-block">Request this: $99</summary><form class="oreq" method="post" action="#" data-a="aW5mbw==" data-b="ZXlldG9hZC5jb20=" data-c=""><input type="hidden" name="_subject" value="Order request — NFC menu setup — linkrestaurants.com"><input type="hidden" name="_template" value="table"><input type="hidden" name="_next" value="https://linkrestaurants.com/?requested=1#order-sent"><input type="hidden" name="plan" value="NFC menu setup"><input type="hidden" name="price" value="$99 one-time"><div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div><label>Your name *<input type="text" name="name" required autocomplete="name"></label><label>Email *<input type="email" name="email" required autocomplete="email"></label><label>Phone *<input type="tel" name="phone" required autocomplete="tel" inputmode="tel"></label><label>Restaurant name *<input type="text" name="business" required autocomplete="organization"></label><label>Website (optional)<input type="url" name="website" autocomplete="url" placeholder="https://"></label><p class="onote">No card needed now. We&rsquo;ll email you a secure invoice within 1 business day.</p><button class="btn btn-block" type="submit">Send order request</button><div class="ostat" role="status" aria-live="polite"></div></form></details>
           <p class="pay-terms">NFC menu setup &middot; $99 one-time</p>
         </div>
         <div class="price-card reveal">
           <div class="plabel">Hosting</div>
           <div class="amt">$25<small> / month</small></div>
           <div class="pdesc">Keeps your menu page live, fast, and online. Cancel any time.</div>
-          <form class="pay-form" method="post" action="https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx">
-            <input type="hidden" name="LinkId" value="084655e0-4eba-4dc6-8180-c22dc4f3a392">
-            <button type="submit" class="btn btn-block">Buy now: $25</button>
-          </form>
+          <details class="pay-form oreq-wrap"><summary class="btn btn-block">Request this: $25/mo</summary><form class="oreq" method="post" action="#" data-a="aW5mbw==" data-b="ZXlldG9hZC5jb20=" data-c=""><input type="hidden" name="_subject" value="Order request — Menu hosting — linkrestaurants.com"><input type="hidden" name="_template" value="table"><input type="hidden" name="_next" value="https://linkrestaurants.com/?requested=1#order-sent"><input type="hidden" name="plan" value="Menu hosting"><input type="hidden" name="price" value="$25/mo"><div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div><label>Your name *<input type="text" name="name" required autocomplete="name"></label><label>Email *<input type="email" name="email" required autocomplete="email"></label><label>Phone *<input type="tel" name="phone" required autocomplete="tel" inputmode="tel"></label><label>Restaurant name *<input type="text" name="business" required autocomplete="organization"></label><label>Website (optional)<input type="url" name="website" autocomplete="url" placeholder="https://"></label><p class="onote">No card needed now. We&rsquo;ll email you a secure invoice within 1 business day.</p><button class="btn btn-block" type="submit">Send order request</button><div class="ostat" role="status" aria-live="polite"></div></form></details>
           <p class="pay-terms">Menu hosting &middot; $25 per month, billed monthly</p>
-          <p class="pay-note">First month charged today. We&rsquo;ll confirm your ongoing monthly billing during your intro call.</p>
+          <p class="pay-note">Nothing is charged until you pay the invoice we email you. We&rsquo;ll confirm your ongoing monthly billing during your intro call.</p>
         </div>
         <div class="price-card reveal">
           <div class="plabel">Menu update</div>
           <div class="amt">$100<small> / update</small></div>
           <div class="pdesc">A full menu rewrite — new sections, new prices, new dishes. Simple logo or image swaps are quoted as needed.</div>
-          <form class="pay-form" method="post" action="https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx">
-            <input type="hidden" name="LinkId" value="5279fb56-6f96-4910-a37e-c122a0ed36a8">
-            <button type="submit" class="btn btn-block">Buy now: $100</button>
-          </form>
+          <details class="pay-form oreq-wrap"><summary class="btn btn-block">Request this: $100</summary><form class="oreq" method="post" action="#" data-a="aW5mbw==" data-b="ZXlldG9hZC5jb20=" data-c=""><input type="hidden" name="_subject" value="Order request — Full menu update — linkrestaurants.com"><input type="hidden" name="_template" value="table"><input type="hidden" name="_next" value="https://linkrestaurants.com/?requested=1#order-sent"><input type="hidden" name="plan" value="Full menu update"><input type="hidden" name="price" value="$100 one-time"><div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div><label>Your name *<input type="text" name="name" required autocomplete="name"></label><label>Email *<input type="email" name="email" required autocomplete="email"></label><label>Phone *<input type="tel" name="phone" required autocomplete="tel" inputmode="tel"></label><label>Restaurant name *<input type="text" name="business" required autocomplete="organization"></label><label>Website (optional)<input type="url" name="website" autocomplete="url" placeholder="https://"></label><p class="onote">No card needed now. We&rsquo;ll email you a secure invoice within 1 business day.</p><button class="btn btn-block" type="submit">Send order request</button><div class="ostat" role="status" aria-live="polite"></div></form></details>
           <p class="pay-terms">Full menu update &middot; $100 one-time</p>
         </div>
       </div>
@@ -1107,7 +1109,7 @@ section{padding:78px 0}
       <div class="trust-row trust-dark reveal">
         <span class="trust-seal"><a href="https://www.bbb.org/us/co/denver/profile/advertising-agencies/search-converts-llc-1296-90228702/#sealclick" target="_blank" rel="nofollow noopener" aria-label="Search Converts LLC BBB Business Review (opens BBB profile)"><img src="https://seal-alaskaoregonwesternwashington.bbb.org/seals/blue-seal-200-65-bbb-90228702.png" width="200" height="65" alt="Search Converts LLC BBB Business Review" loading="lazy" decoding="async"></a></span>
         <div class="trust-txt">
-          <p class="pay-secure">Secure checkout by Authorize.net. We never see your card number.</p>
+          <p class="pay-secure">No card needed now. We email you a secure Authorize.net invoice within 1 business day. We never see your card number.</p>
           <p class="trust-cap">BBB Accredited Business, listed as Search Converts LLC.</p>
         </div>
         <div class="anet-seal" style="display:inline-block;flex:none;box-sizing:content-box;min-width:90px;min-height:72px;vertical-align:middle;background:#fff;padding:6px 10px;border-radius:10px"><!-- (c) 2005, 2026. Authorize.Net is a registered trademark of CyberSource Corporation --> <div class="AuthorizeNetSeal"> <script type="text/javascript" language="javascript">var ANS_customer_id="2c88f8ff-07b2-4257-8917-e75f99310417";</script> <script type="text/javascript" language="javascript" src="https://verify.authorize.net:443/anetseal/seal.js" ></script> </div></div>
@@ -1817,5 +1819,21 @@ section{padding:78px 0}
 }
 </script>
 <script>document.querySelectorAll("a.eml").forEach(function(a){var e=atob(a.dataset.a)+String.fromCharCode(64)+atob(a.dataset.b);a.href="mailto:"+e;if(a.hasAttribute("data-show"))a.textContent=e;});</script>
+<script>/* order-request forms (replaced Authorize.net buy buttons 2026-10-26) */
+(function(){var d=document,t0=Date.now();
+function b64(s){try{return s?atob(s):''}catch(e){return ''}}
+function say(el,c,m){if(!el)return;el.className='ostat '+c;el.textContent=m}
+Array.prototype.forEach.call(d.querySelectorAll('form.oreq'),function(f){var st=f.querySelector('.ostat'),btn=f.querySelector('button[type=submit]');
+f.addEventListener('submit',function(e){e.preventDefault();
+var hp=f.querySelector('input[name=_honey]');if(hp&&hp.value){say(st,'ok','Thanks. Your request was sent.');f.reset();return}
+if(Date.now()-t0<3000){say(st,'err','Please take a moment to fill in the form, then send it again.');return}
+if(f.checkValidity&&!f.checkValidity()){if(f.reportValidity)f.reportValidity();return}
+var ph=f.querySelector('input[name=phone]'),dg=ph?ph.value.replace(/\D/g,''):'';if(dg.length<10||dg.length>15){say(st,'err','Please enter a phone number with area code.');if(ph)ph.focus();return}
+var to=b64(f.getAttribute('data-a'))+String.fromCharCode(64)+b64(f.getAttribute('data-b'))+b64(f.getAttribute('data-c'));
+f.setAttribute('action','https://formsubmit.co/'+to);if(btn)btn.disabled=true;say(st,'wait','Sending…');
+HTMLFormElement.prototype.submit.call(f)})});
+window.addEventListener('pageshow',function(){Array.prototype.forEach.call(d.querySelectorAll('form.oreq button[type=submit]'),function(b){b.disabled=false})});
+if(/[?&]requested=1(&|$)/.test(location.search)){var a=d.getElementById('order-sent');if(a){a.innerHTML='<div class="ostat ok" role="status">Thanks. We received your order request and will email you a secure invoice within 1 business day.</div>';a.scrollIntoView({block:'center'})}}
+})();</script>
 </body>
 </html>
