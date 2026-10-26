@@ -107,22 +107,19 @@
           <div class="plabel">Monthly</div>
           <div class="amt">$9.99<small> / month</small></div>
           <div class="pdesc">Claim &amp; Optimize, billed month to month.</div>
-          <form class="pay-form" method="post" action="https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx">
-            <input type="hidden" name="LinkId" value="e804e38a-4ac8-44f0-8ff5-c592cec4a897">
-            <button type="submit" class="btn btn-block">Buy now: $9.99</button>
-          </form>
-          <p class="pay-terms">$9.99 per month, billed monthly</p>
-          <p class="pay-note">First month charged today. We&rsquo;ll confirm your ongoing monthly billing during your intro call.</p>
+          <div class="pay-form">
+            <button type="button" class="btn btn-block sc-buy" data-sku="RST-CLAIM-M" data-site="linkrestaurants.com">Buy now: $9.99/mo</button>
+          </div>
+          <p class="pay-terms">$9.99 per month, billed monthly. Cancel anytime online.</p>
         </div>
         <div class="price-card">
           <div class="plabel">Yearly</div>
           <div class="amt">$99<small> / year</small></div>
           <div class="pdesc">Claim &amp; Optimize for one year, one payment.</div>
-          <form class="pay-form" method="post" action="https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx">
-            <input type="hidden" name="LinkId" value="09d582b6-2f6d-41c3-b601-594004c9c7cb">
-            <button type="submit" class="btn btn-block">Buy now: $99</button>
-          </form>
-          <p class="pay-terms">$99 per year, one payment</p>
+          <div class="pay-form">
+            <button type="button" class="btn btn-block sc-buy" data-sku="RST-CLAIM-Y" data-site="linkrestaurants.com">Buy now: $99/yr</button>
+          </div>
+          <p class="pay-terms">$99 per year, renews yearly. Cancel anytime online.</p>
         </div>
         <div class="price-card feature" id="menu-pro">
           <div class="plabel">Menu Pro &middot; best value</div>

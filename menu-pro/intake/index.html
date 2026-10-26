@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Menu Pro Intake | Link Restaurants</title>
+<meta name="description" content="Send us your restaurant details and menu so we can build your Menu Pro page.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/w/link-restaurants-favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+<style>
+  .intake{padding:40px 0 64px}
+  .intake h1{font-size:clamp(30px,6vw,46px);margin-bottom:10px;text-align:center}
+  .intake .lede{color:var(--ink-soft);max-width:640px;margin:0 auto 26px;text-align:center}
+  .icard{max-width:720px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px}
+  .igrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .igrid .full{grid-column:1/-1}
+  @media (max-width:600px){.igrid{grid-template-columns:1fr}.icard{padding:18px}}
+  .icard label{display:block;font-weight:600;font-size:15px;margin-bottom:5px}
+  .icard input,.icard textarea{width:100%;font:inherit;font-size:16px;padding:11px 12px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
+  .icard textarea{min-height:96px;resize:vertical}
+  .icard input:focus,.icard textarea:focus{border-color:var(--orange);outline:none}
+  .icard .hint{display:block;font-size:13.5px;color:var(--ink-faint);margin-top:4px}
+  .icard fieldset{border:0;margin:18px 0 0;padding:0}
+  .icard legend{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20px;margin-bottom:10px}
+  .req{color:var(--orange-deep)}
+  .hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
+  .err{color:#b42318;font-weight:600;min-height:1.4em;margin-top:12px}
+  .ok{max-width:640px;margin:0 auto 24px;background:var(--green-tint);color:var(--green);border-radius:var(--radius);padding:18px;text-align:center;font-weight:600}
+  .send{margin-top:18px;width:100%}
+  .check{display:flex;gap:10px;align-items:flex-start;font-weight:500!important}
+  .check input{width:auto;margin-top:4px}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/" aria-label="Link Restaurants home">
+      <img src="/images/w/link-restaurants-logo-440.png" alt="Link Restaurants" width="280" height="144">
+    </a>
+  </div>
+</header>
+<main class="intake">
+  <div class="wrap">
+    <div class="ok" id="sent" hidden>Thank you, we have your details. If you have not sent your menu yet, reply to our welcome email with photos or a PDF. You will get a preview to approve before anything goes live.</div>
+    <h1>Menu Pro: tell us about your restaurant</h1>
+    <p class="lede">About 3 minutes. We build your hosted menu page, send you a preview, then send your QR code and NFC table link. Questions? Call <a href="tel:+18004818638">1-800-481-8638</a>.</p>
+
+    <form class="icard" id="intake" method="POST" enctype="multipart/form-data" data-a="aW5mbw==" data-b="ZXlldG9hZC5jb20=" novalidate>
+      <!-- FormSubmit: endpoint assembled at submit time; FormSubmit CAPTCHA stays ON -->
+      <input type="hidden" name="_subject" id="subj" value="MENU PRO INTAKE | no-order | restaurant">
+      <input type="hidden" name="_captcha" value="true">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://linkrestaurants.com/menu-pro/intake/?sent=1">
+      <input type="hidden" name="Form" value="Menu Pro intake">
+      <input type="hidden" name="Order id from link" id="i-olink" value="none">
+      <div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
+
+      <div class="igrid">
+        <div><label for="i-order">Order number <span class="req">*</span></label><input id="i-order" name="Order number" required maxlength="64" autocomplete="off"><span class="hint" id="i-ohint">Use the link in your receipt email; it fills this in. We match it to your order and the email you paid with.</span></div>
+        <div><label for="i-name">Your name <span class="req">*</span></label><input id="i-name" name="Your name" required maxlength="120" autocomplete="name"></div>
+        <div><label for="i-email">Email you paid with <span class="req">*</span></label><input id="i-email" name="email" type="email" required maxlength="160" autocomplete="email"></div>
+        <div><label for="i-cell">Your phone</label><input id="i-cell" name="Your phone" type="tel" maxlength="40" autocomplete="tel"></div>
+      </div>
+
+      <fieldset>
+        <legend>Restaurant</legend>
+        <div class="igrid">
+          <div class="full"><label for="i-rname">Restaurant name <span class="req">*</span></label><input id="i-rname" name="Restaurant name" required maxlength="120" autocomplete="organization"></div>
+          <div class="full"><label for="i-street">Street address <span class="req">*</span></label><input id="i-street" name="Street address" required maxlength="160" autocomplete="street-address"></div>
+          <div><label for="i-city">City <span class="req">*</span></label><input id="i-city" name="City" required maxlength="80" autocomplete="address-level2"></div>
+          <div><label for="i-state">State / region, ZIP</label><input id="i-state" name="State and ZIP" maxlength="60" autocomplete="address-level1"></div>
+          <div><label for="i-rphone">Restaurant phone <span class="req">*</span></label><input id="i-rphone" name="Restaurant phone" type="tel" required maxlength="40"></div>
+          <div><label for="i-web">Website</label><input id="i-web" name="Website" type="url" maxlength="200" placeholder="https://"></div>
+          <div class="full"><label for="i-hours">Hours <span class="req">*</span></label><textarea id="i-hours" name="Hours" required maxlength="800" placeholder="Mon-Thu 11am-9pm&#10;Fri-Sat 11am-10:30pm&#10;Sun 10am-8pm"></textarea></div>
+          <div><label for="i-order-url">Online ordering link</label><input id="i-order-url" name="Online ordering link" type="url" maxlength="300" placeholder="https://"></div>
+          <div><label for="i-res-url">Reservations link</label><input id="i-res-url" name="Reservations link" type="url" maxlength="300" placeholder="https://"></div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Menu and logo</legend>
+        <div class="igrid">
+          <div class="full"><label for="i-menu">Link to your current menu</label><input id="i-menu" name="Menu link" type="url" maxlength="400" placeholder="https://"><span class="hint">No link? Upload it below, or just reply to our welcome email with photos or a PDF of your menu.</span></div>
+          <div><label for="i-menufile">Menu file (photo or PDF, up to 5 MB)</label><input id="i-menufile" name="attachment" type="file" accept="image/*,application/pdf"></div>
+          <div><label for="i-logo">Logo (optional)</label><input id="i-logo" name="logo" type="file" accept="image/*"></div>
+          <div class="full"><label for="i-notes">Specials, dietary labels, anything else</label><textarea id="i-notes" name="Notes" maxlength="2000" placeholder="e.g. mark vegan items, gluten-free crust available, happy hour 3-5pm"></textarea></div>
+          <div class="full"><label class="check"><input type="checkbox" id="i-ok" required> <span>I am the owner or manager and we may publish this menu and logo on our hosted page.</span></label></div>
+        </div>
+      </fieldset>
+
+      <p class="err" id="err" role="alert"></p>
+      <button class="btn btn-lg send" id="go" type="submit">Send my details</button>
+    </form>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom" style="border:0;padding-top:0">
+      <span>&copy; 2026 Link Restaurants. All rights reserved.</span>
+      <span class="powered"><a href="https://www.eyetoad.com/" rel="nofollow">Powered by Eye To Ad Media</a></span>
+    </div>
+  </div>
+</footer>
+<script>
+(function () {
+  var q = new URLSearchParams(location.search);
+  if (q.get('sent') === '1') { document.getElementById('sent').hidden = false; }
+  var form = document.getElementById('intake');
+  var ord = document.getElementById('i-order');
+  var o = (q.get('o') || '').replace(/[^A-Za-z0-9._-]/g, '').slice(0, 64);
+  if (o) { ord.value = o; ord.readOnly = true; document.getElementById('i-olink').value = o; }
+  var started = Date.now();
+  var err = document.getElementById('err');
+  var MAX = 5 * 1024 * 1024;
+  var SPAM = /\b(seo services|backlink|crypto|casino|viagra|loan offer|bitcoin|guest post)\b/i;
+  function fail(m) { err.textContent = m; err.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+  form.addEventListener('submit', function (e) {
+    e.preventDefault(); err.textContent = '';
+    if (form.querySelector('[name="_honey"]').value) return;
+    if (Date.now() - started < 3000) return fail('Give the form a moment, then send again.');
+    var req = form.querySelectorAll('[required]');
+    for (var i = 0; i < req.length; i++) {
+      if (req[i].type === 'checkbox' ? !req[i].checked : !String(req[i].value).trim()) return fail('Please fill in every field marked with an asterisk and tick the box.');
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/.test(document.getElementById('i-email').value.trim())) return fail('Please check your email address.');
+    var urls = form.querySelectorAll('input[type="url"]');
+    for (var u = 0; u < urls.length; u++) { if (urls[u].value && !/^https?:\/\//i.test(urls[u].value.trim())) return fail('Links should start with https://'); }
+    var files = form.querySelectorAll('input[type="file"]');
+    for (var f = 0; f < files.length; f++) { if (files[f].files[0] && files[f].files[0].size > MAX) return fail('That file is over 5 MB. Reply to our email with it instead, or upload a smaller photo.'); }
+    if (SPAM.test(document.getElementById('i-notes').value)) return fail('That could not be sent.');
+    var rname = document.getElementById('i-rname').value.replace(/[|\r\n]/g, ' ').slice(0, 80);
+    var oid = ord.value.replace(/[^A-Za-z0-9._-]/g, '').slice(0, 64) || 'no-order';
+    document.getElementById('subj').value = 'MENU PRO INTAKE | ' + oid + ' | ' + rname;
+    form.action = 'https://formsubmit.co/' + atob(form.getAttribute('data-a')) + String.fromCharCode(64) + atob(form.getAttribute('data-b'));
+    var b = document.getElementById('go'); b.disabled = true; b.textContent = 'Sending...';
+    form.submit();
+  });
+})();
+</script>
+</body>
+</html>
