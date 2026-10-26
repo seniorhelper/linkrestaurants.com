@@ -4,7 +4,7 @@
 
   <url>
     <loc>https://linkrestaurants.com/</loc>
-    <lastmod>2026-10-11</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -15,9 +15,16 @@
 
   <url>
     <loc>https://linkrestaurants.com/claim/</loc>
-    <lastmod>2026-10-11</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://linkrestaurants.com/menu-pro/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
 </urlset>
